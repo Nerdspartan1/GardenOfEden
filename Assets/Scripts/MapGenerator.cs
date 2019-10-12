@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class MapGenerator : MonoBehaviour
 		Clear,
 		Wall
 	}
+
+	public Transform ParentObject;
 
 	public Vector2Int MapSize;
 	public GameObject WallPrefab;
@@ -19,13 +22,15 @@ public class MapGenerator : MonoBehaviour
 	public float Corridorness = 0.4f;
 	
 
-	Grid _mapGrid;
+	private Grid _mapGrid;
+	private NavMeshSurface _navSurface;
+	
 	List<List<CellType>> Map;
  
     void Start()
     {
 		_mapGrid = GetComponent<Grid>();
-
+		_navSurface = ParentObject.GetComponent<NavMeshSurface>();
 		Generate();
     }
 
@@ -81,9 +86,12 @@ public class MapGenerator : MonoBehaviour
 			for (int z = 0; z < MapSize.y; ++z)
 			{
 				if(Map[x][z] == CellType.Wall)
-					Instantiate(WallPrefab, _mapGrid.CellToWorld(new Vector3Int(x, 0, z)) - mapOffset, Quaternion.identity);
+					Instantiate(WallPrefab, _mapGrid.CellToWorld(new Vector3Int(x, 0, z)) - mapOffset, Quaternion.identity,ParentObject);
 			}
 		}
+
+		//Bake the navmesh
+		_navSurface.BuildNavMesh();
 	}
 
 }
