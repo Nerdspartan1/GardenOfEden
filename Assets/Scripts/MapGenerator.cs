@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Linq;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -15,9 +16,11 @@ public class MapGenerator : MonoBehaviour
 	public GameObject Player;
 	public GameObject Monster;
 
-	public int MapSize;
 	public GameObject WallPrefab;
+	public GameObject CollectiblePrefab;
 
+	public int NumberOfCollectibles;
+	public int MapSize;
 	public int NumberOfSteps;
 
 	[Range(0, 1)]
@@ -96,9 +99,13 @@ public class MapGenerator : MonoBehaviour
 		//Bake the navmesh
 		_navSurface.BuildNavMesh();
 
+		List<Vector2Int> occupiedCells = new List<Vector2Int>();
+		occupiedCells.Add(new Vector2Int(MapSize / 2, MapSize / 2)); //center of the map, where the monolith is
+
 		//Place the player
 		Vector2Int playerCell = GetRandomCellPositionInLevel();
 		Player.transform.position = CellToWorld(playerCell) + 1f*Vector3.up;
+		occupiedCells.Add(playerCell);
 
 		//Place the entity at least one third of the map size away from the player
 		Vector2Int monsterCell;
@@ -109,6 +116,18 @@ public class MapGenerator : MonoBehaviour
 
 		Monster.transform.position = CellToWorld(monsterCell);
 		Monster.GetComponent<NavMeshAgent>().enabled = true;
+
+		//Place the collectibles
+		for(int i=0; i < NumberOfCollectibles; i++)
+		{
+			Vector2Int pos;
+			do
+			{
+				pos = GetRandomCellPositionInLevel();
+			} while (occupiedCells.Exists(v => v==pos));
+			occupiedCells.Add(pos);
+			Instantiate(CollectiblePrefab, CellToWorld(pos), Quaternion.identity, ParentObject);
+		}
 	}
 
 	public Vector2Int GetRandomCellPositionInLevel()

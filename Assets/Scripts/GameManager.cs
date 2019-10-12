@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+	public static GameManager Instance;
+
 	public GameObject Game;
 	public GameObject Menu;
 
     void Awake()
     {
+		Instance = this;
 		Game.SetActive(false);
 		Menu.SetActive(true);
     }
