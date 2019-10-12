@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+	public GameObject Monster;
+
 	public float cameraSensitivityX = 100f;
 	public float cameraSensitivityY = 100f;
 
@@ -13,10 +15,12 @@ public class PlayerController : MonoBehaviour
 
 	private Camera _camera;
 	private CharacterController _controller;
+	private GlitchEffect _glitchEffect;
 
 	private void Awake()
 	{
 		_camera = GetComponentInChildren<Camera>();
+		_glitchEffect = GetComponentInChildren<GlitchEffect>();
 		_controller = GetComponent<CharacterController>();
 	}
 
@@ -24,6 +28,7 @@ public class PlayerController : MonoBehaviour
 	{
 		UpdateCameraRotation();
 		UpdateMovement();
+		UpdateGlitchEffect();
 	}
 
 	private void UpdateCameraRotation()
@@ -48,5 +53,16 @@ public class PlayerController : MonoBehaviour
 		if (movement.sqrMagnitude > 1f) movement.Normalize(); 
 
 		_controller.Move(movement * MoveSpeed * Time.deltaTime);
+	}
+
+	private void UpdateGlitchEffect()
+	{
+		float sqrDistanceToMonster = (Monster.transform.position - transform.position).sqrMagnitude;
+		float intensityFactor = 10f*10f / sqrDistanceToMonster; //max intensity at 10 meter
+
+		_glitchEffect.intensity = Mathf.Min(1f, intensityFactor);
+		_glitchEffect.flipIntensity = Mathf.Min(1f, intensityFactor);
+		float colorFactor = Mathf.Min(1f, intensityFactor);
+		_glitchEffect.colorIntensity = colorFactor > 0.2f ? colorFactor : 0f; //add dead zone here bc even low factor changes color significantly
 	}
 }
