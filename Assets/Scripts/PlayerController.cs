@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	private Camera _camera;
 	private CharacterController _controller;
 
-	private void Start()
+	private void Awake()
 	{
 		_camera = GetComponentInChildren<Camera>();
 		_controller = GetComponent<CharacterController>();
