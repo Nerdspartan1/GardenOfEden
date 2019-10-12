@@ -242,10 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ce4322824ea7d4b821fc8189990055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivityX: 100
-  sensitivityY: 100
-  minimumY: -60
-  maximumY: 60
+  cameraSensitivityX: 300
+  cameraSensitivityY: 300
+  MoveSpeed: 6
 --- !u!143 &723988461
 CharacterController:
   m_ObjectHideFlags: 0
