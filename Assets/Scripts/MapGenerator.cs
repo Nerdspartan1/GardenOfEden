@@ -12,8 +12,10 @@ public class MapGenerator : MonoBehaviour
 	}
 
 	public Transform ParentObject;
+	public GameObject Player;
+	public GameObject Monster;
 
-	public Vector2Int MapSize;
+	public int MapSize;
 	public GameObject WallPrefab;
 
 	public int NumberOfSteps;
@@ -24,7 +26,8 @@ public class MapGenerator : MonoBehaviour
 
 	private Grid _mapGrid;
 	private NavMeshSurface _navSurface;
-	
+	private Vector3 _mapOffset;
+
 	List<List<CellType>> Map;
  
     void Start()
@@ -37,11 +40,11 @@ public class MapGenerator : MonoBehaviour
 	public void Generate()
 	{
 		//Initialize the map
-		Map = new List<List<CellType>>(MapSize.x);
-		for(int x = 0; x < MapSize.x; ++x)
+		Map = new List<List<CellType>>(MapSize);
+		for(int x = 0; x < MapSize; ++x)
 		{
-			Map.Add(new List<CellType>(MapSize.y));
-			for(int z = 0; z < MapSize.y; ++z)
+			Map.Add(new List<CellType>(MapSize));
+			for(int z = 0; z < MapSize; ++z)
 			{
 				Map[x].Add(CellType.Wall);
 			}
@@ -49,7 +52,7 @@ public class MapGenerator : MonoBehaviour
 
 		// Roaming algorithm
 		// start in the middle
-		Vector2Int roamerPos = new Vector2Int(MapSize.x / 2, MapSize.y / 2);
+		Vector2Int roamerPos = new Vector2Int(MapSize / 2, MapSize / 2);
 		Vector2Int roamerDir = new Vector2Int(1, 0);
 		Map[roamerPos.x][roamerPos.y] = CellType.Clear;
 
@@ -71,7 +74,7 @@ public class MapGenerator : MonoBehaviour
 
 			// flip roamer direction if it goes into the exterior walls
 			var nextPos = roamerPos + roamerDir;
-			if (nextPos.x < 1 || nextPos.x >= MapSize.x - 1 || nextPos.y < 1 || nextPos.y >= MapSize.y - 1)
+			if (nextPos.x < 1 || nextPos.x >= MapSize - 1 || nextPos.y < 1 || nextPos.y >= MapSize - 1)
 				roamerDir *= -1;
 
 			//move roamer
@@ -80,18 +83,47 @@ public class MapGenerator : MonoBehaviour
 		}
 
 		//Fill out the scene
-		Vector3 mapOffset = new Vector3(MapSize.x / 2 * _mapGrid.cellSize.x, 0, MapSize.y / 2 * _mapGrid.cellSize.z);
-		for (int x = 0; x < MapSize.x; ++x)
+		_mapOffset = new Vector3(MapSize / 2 * _mapGrid.cellSize.x, 0, MapSize / 2 * _mapGrid.cellSize.z);
+		for (int x = 0; x < MapSize; ++x)
 		{
-			for (int z = 0; z < MapSize.y; ++z)
+			for (int z = 0; z < MapSize; ++z)
 			{
 				if(Map[x][z] == CellType.Wall)
-					Instantiate(WallPrefab, _mapGrid.CellToWorld(new Vector3Int(x, 0, z)) - mapOffset, Quaternion.identity,ParentObject);
+					Instantiate(WallPrefab, CellToWorld(new Vector2Int(x,z)), Quaternion.identity,ParentObject);
 			}
 		}
 
 		//Bake the navmesh
 		_navSurface.BuildNavMesh();
+
+		//Place the player
+		Vector2Int playerCell = GetRandomCellPositionInLevel();
+		Player.transform.position = CellToWorld(playerCell) + 1f*Vector3.up;
+
+		//Place the entity at least one third of the map size away from the player
+		Vector2Int monsterCell;
+		do
+		{
+			monsterCell = GetRandomCellPositionInLevel();
+		} while ((monsterCell - playerCell).sqrMagnitude < MapSize * MapSize / 9);
+
+		Monster.transform.position = CellToWorld(monsterCell);
+		Monster.GetComponent<NavMeshAgent>().enabled = true;
 	}
 
+	public Vector2Int GetRandomCellPositionInLevel()
+	{
+		int x, z;
+		do
+		{
+			x = Random.Range(1, MapSize - 1);
+			z = Random.Range(1, MapSize - 1);
+		} while (Map[x][z] == CellType.Wall);
+		return new Vector2Int(x, z);
+	}
+
+	private Vector3 CellToWorld(Vector2Int cellPos)
+	{
+		return _mapGrid.CellToWorld(new Vector3Int(cellPos.x, 0, cellPos.y)) - _mapOffset;
+	}
 }
