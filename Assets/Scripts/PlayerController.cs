@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,12 +15,16 @@ public class PlayerController : MonoBehaviour
 	private float rotationY = 0F;
 
 	private Camera _camera;
+	private Grain _grain;
 	private CharacterController _controller;
 	private GlitchEffect _glitchEffect;
+
+	public int NumberOfCollectiblesToCollect;
 
 	private void Awake()
 	{
 		_camera = GetComponentInChildren<Camera>();
+		_grain = _camera.GetComponent<PostProcessVolume>().sharedProfile.GetSetting<Grain>();
 		_glitchEffect = GetComponentInChildren<GlitchEffect>();
 		_controller = GetComponent<CharacterController>();
 	}
@@ -64,5 +69,17 @@ public class PlayerController : MonoBehaviour
 		_glitchEffect.flipIntensity = Mathf.Min(1f, intensityFactor);
 		float colorFactor = Mathf.Min(1f, intensityFactor);
 		_glitchEffect.colorIntensity = colorFactor > 0.2f ? colorFactor : 0f; //add dead zone here bc even low factor changes color significantly
+
+		_grain.intensity.value = Mathf.Min(1f, intensityFactor);
+
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Collectible")
+		{
+			Destroy(other.gameObject);
+			NumberOfCollectiblesToCollect--;
+		}
 	}
 }

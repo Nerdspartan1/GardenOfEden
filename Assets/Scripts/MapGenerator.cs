@@ -118,6 +118,7 @@ public class MapGenerator : MonoBehaviour
 		Monster.GetComponent<NavMeshAgent>().enabled = true;
 
 		//Place the collectibles
+		Player.GetComponent<PlayerController>().NumberOfCollectiblesToCollect = NumberOfCollectibles;
 		for(int i=0; i < NumberOfCollectibles; i++)
 		{
 			Vector2Int pos;
