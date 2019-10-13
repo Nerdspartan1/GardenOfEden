@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 	private Grain _grain;
 	private CharacterController _controller;
 	private GlitchEffect _glitchEffect;
+	private DeadPixelGenerator _deadPixelGenerator;
 
 	
 
@@ -27,13 +28,14 @@ public class PlayerController : MonoBehaviour
 		_grain = _camera.GetComponent<PostProcessVolume>().sharedProfile.GetSetting<Grain>();
 		_glitchEffect = GetComponentInChildren<GlitchEffect>();
 		_controller = GetComponent<CharacterController>();
+		_deadPixelGenerator = GetComponentInChildren<DeadPixelGenerator>();
 	}
 
 	void Update()
 	{
 		UpdateCameraRotation();
 		UpdateMovement();
-		UpdateGlitchEffect();
+		UpdateEffects();
 	}
 
 	private void UpdateCameraRotation()
@@ -60,17 +62,16 @@ public class PlayerController : MonoBehaviour
 		_controller.Move(movement * MoveSpeed * Time.deltaTime);
 	}
 
-	private void UpdateGlitchEffect()
+	private void UpdateEffects()
 	{
 		float sqrDistanceToMonster = (Monster.transform.position - transform.position).sqrMagnitude;
-		float intensityFactor = 10f*10f / sqrDistanceToMonster; //max intensity at 10 meter
+		float intensityFactor = Mathf.Min(1f, 10f*10f / sqrDistanceToMonster); //max intensity at 10 meter
 
-		_glitchEffect.intensity = Mathf.Min(1f, intensityFactor);
-		_glitchEffect.flipIntensity = Mathf.Min(1f, intensityFactor);
-		float colorFactor = Mathf.Min(1f, intensityFactor);
-		_glitchEffect.colorIntensity = colorFactor > 0.2f ? colorFactor : 0f; //add dead zone here bc even low factor changes color significantly
-
-		_grain.intensity.value = Mathf.Min(1f, intensityFactor);
+		_glitchEffect.intensity = intensityFactor;
+		_glitchEffect.flipIntensity = intensityFactor;
+		_glitchEffect.colorIntensity = intensityFactor > 0.2f ? intensityFactor : 0f; //add dead zone here bc even low factor changes color significantly
+		_grain.intensity.value = intensityFactor;
+		_deadPixelGenerator.Intensity = intensityFactor;
 
 	}
 
