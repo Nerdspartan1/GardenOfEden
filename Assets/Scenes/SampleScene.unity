@@ -738,6 +738,7 @@ GameObject:
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
   - component: {fileID: 963194232}
+  - component: {fileID: 963194233}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -920,8 +921,21 @@ MonoBehaviour:
   DeadPixel: {fileID: 4653608153352929675, guid: 0e54b7514ca5c7740b02be5168735676,
     type: 3}
   Intensity: 0
-  MaxDeadPixels: 1000
-  SpawnRate: 1
+  MaxDeadPixels: 10
+  SpawnRate: 0.1
+--- !u!114 &963194233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba09d1dfb7dda945b1277420151ed2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shader: {fileID: 4800000, guid: ce0b6d72d00b41940b85f37afd88ccf1, type: 3}
 --- !u!1 &969339385
 GameObject:
   m_ObjectHideFlags: 0
