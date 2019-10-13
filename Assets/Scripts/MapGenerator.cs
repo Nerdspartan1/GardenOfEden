@@ -5,6 +5,7 @@ using UnityEngine.AI;
 using System.Linq;
 
 [RequireComponent(typeof(LevelManager))]
+[RequireComponent(typeof(PropsManager))]
 public class MapGenerator : MonoBehaviour
 {
 	enum CellType
@@ -24,11 +25,13 @@ public class MapGenerator : MonoBehaviour
 
 	[Range(0, 1)]
 	public float Corridorness = 0.4f;
-	
+
+	public int NumberOfProps = 30;
 
 	private Grid _mapGrid;
 	private NavMeshSurface _navSurface;
 	private LevelManager _levelManager;
+	private PropsManager _propsManager;
 	private Vector3 _mapOffset;
 
 	List<List<CellType>> Map;
@@ -38,6 +41,7 @@ public class MapGenerator : MonoBehaviour
 		_mapGrid = GetComponent<Grid>();
 		_navSurface = GetComponent<NavMeshSurface>();
 		_levelManager = GetComponent<LevelManager>();
+		_propsManager = GetComponent<PropsManager>();
 		Generate();
     }
 
@@ -117,6 +121,13 @@ public class MapGenerator : MonoBehaviour
 
 		Monster.transform.position = CellToWorld(monsterCell);
 		Monster.GetComponent<NavMeshAgent>().enabled = true;
+
+		//Place the props
+		for(int i=0; i < NumberOfProps; i++)
+		{
+			Vector2Int pos = GetRandomCellPositionInLevel();
+			Instantiate(_propsManager.Props[Random.Range(0,_propsManager.Props.Length)], CellToWorld(pos), new Quaternion(0,Random.Range(0f,1f),0,1f), transform);
+		}
 
 		//Place the collectibles
 		for(int i=0; i < _levelManager.NumberOfCollectibles; i++)

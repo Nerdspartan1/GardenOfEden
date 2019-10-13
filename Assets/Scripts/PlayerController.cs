@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 	private GlitchEffect _glitchEffect;
 	private DeadPixelGenerator _deadPixelGenerator;
 
+	private float _height;
+
 	
 
 	private void Awake()
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
 		_glitchEffect = GetComponentInChildren<GlitchEffect>();
 		_controller = GetComponent<CharacterController>();
 		_deadPixelGenerator = GetComponentInChildren<DeadPixelGenerator>();
+
+		_height = transform.position.y;
 	}
 
 	void Update()
@@ -60,6 +64,10 @@ public class PlayerController : MonoBehaviour
 		if (movement.sqrMagnitude > 1f) movement.Normalize(); 
 
 		_controller.Move(movement * MoveSpeed * Time.deltaTime);
+
+		//keep us on the ground
+		//transform.position = new Vector3(transform.position.x, _height, transform.position.z);
+		_controller.SimpleMove(1f * Vector3.down);
 	}
 
 	private void UpdateEffects()
