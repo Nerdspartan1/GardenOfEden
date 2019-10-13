@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
 
+[RequireComponent(typeof(LevelManager))]
 public class MapGenerator : MonoBehaviour
 {
 	enum CellType
@@ -12,14 +13,12 @@ public class MapGenerator : MonoBehaviour
 		Wall
 	}
 
-	public Transform ParentObject;
 	public GameObject Player;
 	public GameObject Monster;
 
 	public GameObject WallPrefab;
 	public GameObject CollectiblePrefab;
 
-	public int NumberOfCollectibles;
 	public int MapSize;
 	public int NumberOfSteps;
 
@@ -29,6 +28,7 @@ public class MapGenerator : MonoBehaviour
 
 	private Grid _mapGrid;
 	private NavMeshSurface _navSurface;
+	private LevelManager _levelManager;
 	private Vector3 _mapOffset;
 
 	List<List<CellType>> Map;
@@ -36,7 +36,8 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
 		_mapGrid = GetComponent<Grid>();
-		_navSurface = ParentObject.GetComponent<NavMeshSurface>();
+		_navSurface = GetComponent<NavMeshSurface>();
+		_levelManager = GetComponent<LevelManager>();
 		Generate();
     }
 
@@ -92,7 +93,7 @@ public class MapGenerator : MonoBehaviour
 			for (int z = 0; z < MapSize; ++z)
 			{
 				if(Map[x][z] == CellType.Wall)
-					Instantiate(WallPrefab, CellToWorld(new Vector2Int(x,z)), Quaternion.identity,ParentObject);
+					Instantiate(WallPrefab, CellToWorld(new Vector2Int(x,z)), Quaternion.identity,transform);
 			}
 		}
 
@@ -118,8 +119,7 @@ public class MapGenerator : MonoBehaviour
 		Monster.GetComponent<NavMeshAgent>().enabled = true;
 
 		//Place the collectibles
-		Player.GetComponent<PlayerController>().NumberOfCollectiblesToCollect = NumberOfCollectibles;
-		for(int i=0; i < NumberOfCollectibles; i++)
+		for(int i=0; i < _levelManager.NumberOfCollectibles; i++)
 		{
 			Vector2Int pos;
 			do
@@ -127,7 +127,7 @@ public class MapGenerator : MonoBehaviour
 				pos = GetRandomCellPositionInLevel();
 			} while (occupiedCells.Exists(v => v==pos));
 			occupiedCells.Add(pos);
-			Instantiate(CollectiblePrefab, CellToWorld(pos), Quaternion.identity, ParentObject);
+			Instantiate(CollectiblePrefab, CellToWorld(pos), Quaternion.identity, transform);
 		}
 	}
 

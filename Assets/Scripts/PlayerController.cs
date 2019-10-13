@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 	private CharacterController _controller;
 	private GlitchEffect _glitchEffect;
 
-	public int NumberOfCollectiblesToCollect;
+	
 
 	private void Awake()
 	{
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 		if(other.tag == "Collectible")
 		{
 			Destroy(other.gameObject);
-			NumberOfCollectiblesToCollect--;
+			LevelManager.Instance.Collect();
 		}
 	}
 }
