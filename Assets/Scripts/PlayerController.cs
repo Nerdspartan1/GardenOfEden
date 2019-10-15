@@ -66,7 +66,6 @@ public class PlayerController : MonoBehaviour
 		_controller.Move(movement * MoveSpeed * Time.deltaTime);
 
 		//keep us on the ground
-		//transform.position = new Vector3(transform.position.x, _height, transform.position.z);
 		_controller.SimpleMove(1f * Vector3.down);
 	}
 

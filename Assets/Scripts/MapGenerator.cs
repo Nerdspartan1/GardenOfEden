@@ -6,12 +6,13 @@ using System.Linq;
 
 [RequireComponent(typeof(LevelManager))]
 [RequireComponent(typeof(PropsManager))]
+[RequireComponent(typeof(TileGenerator))]
 public class MapGenerator : MonoBehaviour
 {
-	enum CellType
+	public enum CellType
 	{
-		Clear,
-		Wall
+		Clear = 0,
+		Wall = 1
 	}
 
 	public GameObject Player;
@@ -32,6 +33,7 @@ public class MapGenerator : MonoBehaviour
 	private NavMeshSurface _navSurface;
 	private LevelManager _levelManager;
 	private PropsManager _propsManager;
+	private TileGenerator _tileGenerator;
 	private Vector3 _mapOffset;
 
 	List<List<CellType>> Map;
@@ -42,6 +44,7 @@ public class MapGenerator : MonoBehaviour
 		_navSurface = GetComponent<NavMeshSurface>();
 		_levelManager = GetComponent<LevelManager>();
 		_propsManager = GetComponent<PropsManager>();
+		_tileGenerator = GetComponent<TileGenerator>();
 		Generate();
     }
 
@@ -92,14 +95,7 @@ public class MapGenerator : MonoBehaviour
 
 		//Fill out the scene
 		_mapOffset = new Vector3(MapSize / 2 * _mapGrid.cellSize.x, 0, MapSize / 2 * _mapGrid.cellSize.z);
-		for (int x = 0; x < MapSize; ++x)
-		{
-			for (int z = 0; z < MapSize; ++z)
-			{
-				if(Map[x][z] == CellType.Wall)
-					Instantiate(WallPrefab, CellToWorld(new Vector2Int(x,z)), Quaternion.identity,transform);
-			}
-		}
+		_tileGenerator.TileMap(Map);
 
 		//Bake the navmesh
 		_navSurface.BuildNavMesh();
@@ -153,7 +149,7 @@ public class MapGenerator : MonoBehaviour
 		return new Vector2Int(x, z);
 	}
 
-	private Vector3 CellToWorld(Vector2Int cellPos)
+	public Vector3 CellToWorld(Vector2Int cellPos)
 	{
 		return _mapGrid.CellToWorld(new Vector3Int(cellPos.x, 0, cellPos.y)) - _mapOffset;
 	}

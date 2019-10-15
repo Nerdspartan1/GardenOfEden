@@ -1299,6 +1299,7 @@ GameObject:
   - component: {fileID: 1340689693}
   - component: {fileID: 1340689692}
   - component: {fileID: 1340689695}
+  - component: {fileID: 1340689696}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -1412,6 +1413,35 @@ MonoBehaviour:
   Props:
   - {fileID: 3083092806581703743, guid: 23aa95e15a17b344d805915316bf266f, type: 3}
   - {fileID: 191200794742611978, guid: 9c3576bf3d5e1a946a1db4168a038e31, type: 3}
+--- !u!114 &1340689696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340689689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3b63bbcc88761479c5b6320b32ab9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: -5495902117074765545, guid: aba8f5b553f8af849b888ca24b4eb36e, type: 3}
+  Tile0: {fileID: 0}
+  Tile1e: {fileID: 0}
+  Tile1s: {fileID: 0}
+  Tile1w: {fileID: 0}
+  Tile1n: {fileID: 0}
+  Tile2es: {fileID: 0}
+  Tile2ew: {fileID: 0}
+  Tile2en: {fileID: 0}
+  Tile2sw: {fileID: 0}
+  Tile2sn: {fileID: 0}
+  Tile2wn: {fileID: 0}
+  Tile3esw: {fileID: 0}
+  Tile3swn: {fileID: 0}
+  Tile3wne: {fileID: 0}
+  Tile3nes: {fileID: 0}
+  Tile4: {fileID: 0}
 --- !u!1 &1432024392
 GameObject:
   m_ObjectHideFlags: 0
