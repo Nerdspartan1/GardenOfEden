@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 	public float cameraSensitivityY = 100f;
 
 	public float MoveSpeed = 10f;
+	public float SprintSpeed = 11f;
 
 	private float rotationY = 0F;
 
@@ -21,8 +22,6 @@ public class PlayerController : MonoBehaviour
 	private DeadPixelGenerator _deadPixelGenerator;
 
 	private float _height;
-
-	
 
 	private void Awake()
 	{
