@@ -10,8 +10,7 @@ public class PlayerController : MonoBehaviour
 	public float cameraSensitivityX = 100f;
 	public float cameraSensitivityY = 100f;
 
-	public float MoveSpeed = 10f;
-	public float SprintSpeed = 11f;
+	public float MoveSpeed = 6f;
 
 	private float rotationY = 0F;
 
@@ -62,10 +61,8 @@ public class PlayerController : MonoBehaviour
 		// cap the max speed so that the player doesn't go faster diagonally
 		if (movement.sqrMagnitude > 1f) movement.Normalize(); 
 
-		_controller.Move(movement * MoveSpeed * Time.deltaTime);
+		_controller.SimpleMove(movement * MoveSpeed);
 
-		//keep us on the ground
-		_controller.SimpleMove(1f * Vector3.down);
 	}
 
 	private void UpdateEffects()

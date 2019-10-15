@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 723988462}
   - component: {fileID: 723988461}
   - component: {fileID: 723988460}
+  - component: {fileID: 723988464}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -526,7 +527,6 @@ MonoBehaviour:
   cameraSensitivityX: 300
   cameraSensitivityY: 300
   MoveSpeed: 6
-  SprintSpeed: 11
 --- !u!143 &723988461
 CharacterController:
   m_ObjectHideFlags: 0
@@ -574,6 +574,24 @@ Transform:
   m_Father: {fileID: 39362611}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &723988464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723988459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f332290f7ab1a24449b81f8a86a8a83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WalkSpeed: 3
+  SprintSpeed: 5.5
+  Stamina: 1
+  StaminaDepletionRate: 0.1
+  StaminaRegenerationRate: 0.05
+  StaminaSprintThreshold: 0.25
 --- !u!1 &752579136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,13 +1513,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3b63bbcc88761479c5b6320b32ab9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mesh: {fileID: -5495902117074765545, guid: aba8f5b553f8af849b888ca24b4eb36e, type: 3}
-  Tile0: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  Tile1: {fileID: 0}
-  Tile2_straight: {fileID: 0}
-  Tile2_corner: {fileID: 0}
-  Tile3: {fileID: 0}
-  Tile4: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  Tile0: {fileID: 8243245590133828102, guid: 4c0ab232cfc153a46804b87fc80ff6a5, type: 3}
+  Tile1: {fileID: 8243245590133828102, guid: 4c0ab232cfc153a46804b87fc80ff6a5, type: 3}
+  Tile2_straight: {fileID: 8243245590133828102, guid: 4c0ab232cfc153a46804b87fc80ff6a5,
+    type: 3}
+  Tile2_corner: {fileID: 8243245590133828102, guid: 4c0ab232cfc153a46804b87fc80ff6a5,
+    type: 3}
+  Tile3: {fileID: 8243245590133828102, guid: 4c0ab232cfc153a46804b87fc80ff6a5, type: 3}
+  Tile4: {fileID: 8243245590133828102, guid: 4c0ab232cfc153a46804b87fc80ff6a5, type: 3}
 --- !u!1 &1432024392
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,7 +48,6 @@ public class TileGenerator : MonoBehaviour
 					if (z == 0 || map[x][z - 1] == CellType.Wall)						  neighbors |= Neighbors.South;
 					if (z == _mapGenerator.MapSize - 1 || map[x][z + 1] == CellType.Wall) neighbors |= Neighbors.North;
 
-
 					var wall = Instantiate(GetTilePrefab(neighbors), _mapGenerator.CellToWorld(new Vector2Int(x, z)), GetTileRotation(neighbors), transform);
 				}
 			}
