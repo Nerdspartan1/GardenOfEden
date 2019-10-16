@@ -1223,6 +1223,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 723988459}
+  MapGenerator: {fileID: 1340689693}
+  SightDistance: 18
+  LoseSightDistance: 24
+  CantSeeThrough:
+    serializedVersion: 2
+    m_Bits: 256
+  QuitChasingDelay: 5
+  CurrentDestination: {x: 0, y: 0, z: 0}
+  PlayerLineObstructed: 0
+  CurrentAI: 0
 --- !u!195 &1324605964
 NavMeshAgent:
   m_ObjectHideFlags: 0
