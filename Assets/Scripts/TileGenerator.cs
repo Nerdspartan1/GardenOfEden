@@ -14,7 +14,9 @@ public class TileGenerator : MonoBehaviour
 	public GameObject Tile2_straight;
 	public GameObject Tile2_corner;
 	public GameObject Tile3;
-	public GameObject Tile4;  
+	public GameObject Tile4;
+
+	public Vector3 TileModelUpVector;
 
 	[System.Flags]
 	enum Neighbors
@@ -48,7 +50,11 @@ public class TileGenerator : MonoBehaviour
 					if (z == 0 || map[x][z - 1] == CellType.Wall)						  neighbors |= Neighbors.South;
 					if (z == _mapGenerator.MapSize - 1 || map[x][z + 1] == CellType.Wall) neighbors |= Neighbors.North;
 
-					var wall = Instantiate(GetTilePrefab(neighbors), _mapGenerator.CellToWorld(new Vector2Int(x, z)), GetTileRotation(neighbors), transform);
+					var wall = Instantiate(GetTilePrefab(neighbors), transform);
+					wall.transform.position = _mapGenerator.CellToWorld(new Vector2Int(x, z));
+					//wall.transform.Rotate(TileModelRotation);
+					wall.transform.Rotate(TileModelUpVector, GetRotation(neighbors));
+
 				}
 			}
 		}
@@ -89,45 +95,45 @@ public class TileGenerator : MonoBehaviour
 
 	}
 
-	private Quaternion GetTileRotation(Neighbors neighbors)
+	private float GetRotation(Neighbors neighbors)
 	{
 		switch (neighbors)
 		{
 			case Neighbors.East:
-				return Quaternion.identity;
+				return 0f;
 			case Neighbors.South:
-				return Quaternion.Euler(0, 90f, 0);
+				return 90f;
 			case Neighbors.West:
-				return Quaternion.Euler(0, 180f, 0);
+				return 180f;
 			case Neighbors.North:
-				return Quaternion.Euler(0, 270f, 0);
+				return 270f;
 
 			case Neighbors.East | Neighbors.South:
-				return Quaternion.identity;
+				return 0f;
 			case Neighbors.South | Neighbors.West:
-				return Quaternion.Euler(0, 90f, 0);
+				return 90f;
 			case Neighbors.West | Neighbors.North:
-				return Quaternion.Euler(0, 180f, 0);
+				return 180f;
 			case Neighbors.North | Neighbors.East:
-				return Quaternion.Euler(0, 270f, 0);
+				return 270f;
 
 			case Neighbors.East | Neighbors.West:
-				return Quaternion.identity;
+				return 0f;
 			case Neighbors.South | Neighbors.North:
-				return Quaternion.Euler(0, 90f, 0);
+				return 90f;
 
 
 			case Neighbors.East | Neighbors.South | Neighbors.West:
-				return Quaternion.identity;
+				return 0f;
 			case Neighbors.South | Neighbors.West | Neighbors.North:
-				return Quaternion.Euler(0, 90f, 0);
+				return 90f;
 			case Neighbors.West | Neighbors.North | Neighbors.East:
-				return Quaternion.Euler(0, 180f, 0);
+				return 180f;
 			case Neighbors.North | Neighbors.East | Neighbors.South:
-				return Quaternion.Euler(0, 270f, 0);
+				return 270f;
 
 			default:
-				return Quaternion.identity;
+				return 0f;
 		}
 	}
 
