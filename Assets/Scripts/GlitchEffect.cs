@@ -56,6 +56,8 @@ public class GlitchEffect : MonoBehaviour
 			_material.SetVector("direction", Quaternion.AngleAxis(Random.Range(0, 360) * colorIntensity, Vector3.forward) * Vector4.one);
 			flicker = 0;
 			_flickerTime = Random.value;
+
+         //good spot
 		}
 
 		if (colorIntensity == 0)
@@ -64,25 +66,37 @@ public class GlitchEffect : MonoBehaviour
 		_glitchup += Time.deltaTime * flipIntensity;
 		if (_glitchup > _glitchupTime)
 		{
-			if (Random.value < 0.1f * flipIntensity)
-				_material.SetFloat("flip_up", Random.Range(0, 1f) * flipIntensity);
-			else
-				_material.SetFloat("flip_up", 0);
+        
+            if (Random.value < 0.1f * flipIntensity)
+            {
+             //good spot
+                _material.SetFloat("flip_up", Random.Range(0, 1f) * flipIntensity);
+            }
 
-			_glitchup = 0;
+
+            else
+                _material.SetFloat("flip_up", 0);
+        
+            _glitchup = 0;
 			_glitchupTime = Random.value / 10f;
 		}
 
 		if (flipIntensity == 0)
 			_material.SetFloat("flip_up", 0);
-
-		_glitchdown += Time.deltaTime * flipIntensity;
-		if (_glitchdown > _glitchdownTime)
+        
+        _glitchdown += Time.deltaTime * flipIntensity;
+        
+        if (_glitchdown > _glitchdownTime)
 		{
-			if (Random.value < 0.1f * flipIntensity)
-				_material.SetFloat("flip_down", 1 - Random.Range(0, 1f) * flipIntensity);
-			else
-				_material.SetFloat("flip_down", 1);
+         
+            if (Random.value < 0.1f * flipIntensity)
+            {
+             //good spot
+                _material.SetFloat("flip_down", 1 - Random.Range(0, 1f) * flipIntensity);
+            }
+            else
+            
+                _material.SetFloat("flip_down", 1);
 
 			_glitchdown = 0;
 			_glitchdownTime = Random.value / 10f;
@@ -91,9 +105,11 @@ public class GlitchEffect : MonoBehaviour
 		if (flipIntensity == 0)
 			_material.SetFloat("flip_down", 1);
 
-		if (Random.value < 0.05 * intensity)
+        
+        if (Random.value < 0.05 * intensity)
 		{
-			_material.SetFloat("displace", Random.value * intensity);
+         //could be used but limit instances
+            _material.SetFloat("displace", Random.value * intensity);
 			_material.SetFloat("scale", 1 - Random.value * intensity);
 		}
 		else
