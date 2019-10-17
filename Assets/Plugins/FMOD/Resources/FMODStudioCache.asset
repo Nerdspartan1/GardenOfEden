@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8226681276410667616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drone/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-8220047843122057995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,12 +31,104 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\Sound\GitHub\ReversePropHunt\Desktop\Master.strings.bank
   SubDir: 
-  lastModified: 637069241920302667
+  lastModified: 637069429748669646
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 742
+    Value: 1012
   Exists: 1
+--- !u!114 &-7837040531432027216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drone/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &-7592397709594239118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drone/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &-7546978654886346348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drone/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &-5548634119400727668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drone/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &-4693000109740972494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundscape/Drone
+  m_EditorClassIdentifier: 
+  Path: event:/Soundscape/Drone
+  guid: 1319248e4c5a374ea3e0936dcbd4706e
+  Banks:
+  - {fileID: 1179950708555493707}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8226681276410667616}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 255000
 --- !u!114 &-2595907681167001579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +152,92 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 300
+--- !u!114 &-2335590230869801546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Drone 1
+  m_EditorClassIdentifier: 
+  Path: event:/Drone 1
+  guid: 9a8cc0bad7523d499d21676cfe2fde5e
+  Banks:
+  - {fileID: 1179950708555493707}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 67875
+--- !u!114 &-2035278667524020188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drone/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &-698652547603731350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Drone 2
+  m_EditorClassIdentifier: 
+  Path: event:/Drone 2
+  guid: 42fbc25ea2215946b0f975fcc8d75eca
+  Banks:
+  - {fileID: 1179950708555493707}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 98875
+--- !u!114 &-210441262573076012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Drone 3
+  m_EditorClassIdentifier: 
+  Path: event:/Drone 3
+  guid: feed4aa172dcd94ebc231502de3603bc
+  Banks:
+  - {fileID: 1179950708555493707}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 96013
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,12 +255,17 @@ MonoBehaviour:
   - {fileID: 1179950708555493707}
   EditorEvents:
   - {fileID: -2595907681167001579}
+  - {fileID: -4693000109740972494}
+  - {fileID: 2467630621866032946}
+  - {fileID: -698652547603731350}
+  - {fileID: -2335590230869801546}
+  - {fileID: -210441262573076012}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1179950708555493707}
   StringsBanks:
   - {fileID: -8220047843122057995}
-  stringsBankWriteTime: 637069241920302667
+  stringsBankWriteTime: 637069429748669646
   cacheVersion: 3
 --- !u!114 &1179950708555493707
 MonoBehaviour:
@@ -81,9 +281,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank
   SubDir: 
-  lastModified: 637069241920287818
+  lastModified: 637069429748629943
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 51584
+    Value: 4185408
   Exists: 1
+--- !u!114 &2467630621866032946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Entity
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Entity
+  guid: 87dfcb5d9ef53642868da22e8c11ff24
+  Banks:
+  - {fileID: 1179950708555493707}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5898951337077704709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drone/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &7617245928567400782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drone/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0

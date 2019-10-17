@@ -40,7 +40,8 @@ public class Monster : MonoBehaviour
 		CurrentAI = AI.Roam;
 
         DroneEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/Soundscape/Drone");
-        DroneEvent.start();
+        //DroneEvent.start();
+        //DroneEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
 	void Update()
@@ -68,7 +69,7 @@ public class Monster : MonoBehaviour
 					_destinationInitialized = true;
 
                     DroneEvent.setParameterByName("Enemy Dist", 0);
-                    Debug.Log("lost you");
+                    
                 }
 					
 				break;
@@ -86,7 +87,7 @@ public class Monster : MonoBehaviour
 					CurrentAI = AI.Chase;
 
                     DroneEvent.setParameterByName("Enemy Dist", 100);
-                    Debug.Log("found you");
+                    
                 }
 				break;
 		}
