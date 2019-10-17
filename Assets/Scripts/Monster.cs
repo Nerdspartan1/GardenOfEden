@@ -29,14 +29,18 @@ public class Monster : MonoBehaviour
 
 	private NavMeshAgent _nav;
 
-	
-	
+    //Adding fmod ambient sound + chase audio
 
+    FMOD.Studio.EventInstance DroneEvent;
+    
 
     void Awake()
     {
 		_nav = GetComponent<NavMeshAgent>();
 		CurrentAI = AI.Roam;
+
+        DroneEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/Soundscape/Drone");
+        DroneEvent.start();
     }
 
 	void Update()
@@ -55,7 +59,6 @@ public class Monster : MonoBehaviour
 					if (_timeBeforeQuitChasing == QuitChasingDelay) //just lost sight
 						_lastSeenPlayerPosition = Player.transform.position;
 					_timeBeforeQuitChasing -= Time.deltaTime;
-					
 				}
 
 				if (_timeBeforeQuitChasing <= 0)
@@ -63,7 +66,10 @@ public class Monster : MonoBehaviour
 					CurrentAI = AI.Roam;
 					CurrentDestination = _lastSeenPlayerPosition;
 					_destinationInitialized = true;
-				}
+
+                    DroneEvent.setParameterByName("Enemy Dist", 0);
+                    Debug.Log("lost you");
+                }
 					
 				break;
 			case AI.Roam:
@@ -78,7 +84,10 @@ public class Monster : MonoBehaviour
 				{
 					_destinationInitialized = false;
 					CurrentAI = AI.Chase;
-				}
+
+                    DroneEvent.setParameterByName("Enemy Dist", 100);
+                    Debug.Log("found you");
+                }
 				break;
 		}
     }

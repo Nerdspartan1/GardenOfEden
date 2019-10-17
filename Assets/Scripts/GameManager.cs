@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 	public GameObject Game;
 	public GameObject Menu;
 
+    FMOD.Studio.Bus MasterBus;
+
     void Awake()
     {
 		Instance = this;
