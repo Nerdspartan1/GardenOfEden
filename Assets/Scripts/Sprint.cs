@@ -7,7 +7,7 @@ public class Sprint : MonoBehaviour
 {
 	private PlayerController _playerController;
 
-	public float WalkSpeed = 3f;
+    public float WalkSpeed = 3f;
 	public float SprintSpeed = 5.5f;
 
 	[Range(0,1f)]

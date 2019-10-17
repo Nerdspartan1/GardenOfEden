@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\Sound\GitHub\ReversePropHunt\Desktop\Master.strings.bank
   SubDir: 
-  lastModified: 637066751558070471
+  lastModified: 637069241920302667
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -42,7 +42,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 8000
+  Length: 300
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   - {fileID: 1179950708555493707}
   StringsBanks:
   - {fileID: -8220047843122057995}
-  stringsBankWriteTime: 637066751558070471
+  stringsBankWriteTime: 637069241920302667
   cacheVersion: 3
 --- !u!114 &1179950708555493707
 MonoBehaviour:
@@ -81,9 +81,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank
   SubDir: 
-  lastModified: 637066751558040725
+  lastModified: 637069241920287818
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 48480
+    Value: 51584
   Exists: 1
