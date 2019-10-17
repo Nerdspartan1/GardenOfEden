@@ -2,47 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerController))]
 public class FMODFootsteps : MonoBehaviour
 {
     //adding footsteps sounds through fmod below
 
     [FMODUnity.EventRef]
     public string fsevent;
-    bool playerismoving;
-    public float fsfrequency;
 
-    void Update()
+	private CharacterController _controller;
+
+	public float MinSpeed = 2f;
+    public float FrequencyFactor;
+	private float _timeBeforeNextStep = 0f;
+	private bool _stopped = true;
+
+	private void Start()
+	{
+		_controller = GetComponent<CharacterController>();
+	}
+
+	void Update()
     {
-        if (Input.GetAxis("Vertical") >= 0.01f || Input.GetAxis("Horizontal") >= 0.01f || Input.GetAxis("Vertical") <= -0.01f || Input.GetAxis("Horizontal") <= -0.01f)
-        {
-            //Debug.Log("player is moving");
-            playerismoving = true;
-        }
+		var speed = _controller.velocity.magnitude;
+		if (speed < MinSpeed)
+		{
+			_timeBeforeNextStep = 0.1F / (MinSpeed * FrequencyFactor);
+		}
+		else
+		{
+			if (_timeBeforeNextStep <= 0f)
+			{
+				FMODUnity.RuntimeManager.PlayOneShot(fsevent);
 
-        else if (Input.GetAxis("Vertical") == 0 || Input.GetAxis("Horizontal") == 0)
-        {
-            //Debug.Log("player not moving");
-            playerismoving = false;
-        }
-    }
-
-    void CallFootsteps()
-    {
-        if (playerismoving == true)
-        {
-            //Debug.Log("sound should be playing");
-            FMODUnity.RuntimeManager.PlayOneShot(fsevent);
-        }
-    }
-
-    void Start()
-    {
-        InvokeRepeating("CallFootsteps", 0, fsfrequency);
-        
-    }
-
-    void OnDisabled()
-    {
-        playerismoving = false;
-    }
+				_timeBeforeNextStep = 1 / (speed*FrequencyFactor);
+			}
+			_timeBeforeNextStep -= Time.deltaTime;
+		}
+		
+	}
 }
