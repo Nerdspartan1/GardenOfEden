@@ -1480,10 +1480,10 @@ MonoBehaviour:
     type: 3}
   CollectiblePrefab: {fileID: 4498679382261551532, guid: 946fbb837855d4b499105c1d720446d7,
     type: 3}
-  MapSize: 25
-  NumberOfSteps: 1000
-  Corridorness: 0.5
-  NumberOfProps: 30
+  MapSize: 50
+  NumberOfSteps: 3000
+  Corridorness: 0.7
+  NumberOfProps: 150
 --- !u!114 &1340689694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1970,7 +1970,7 @@ Transform:
   m_GameObject: {fileID: 1863760639}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 1340689690}
   m_RootOrder: 0

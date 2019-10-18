@@ -15,7 +15,6 @@ public class FMODFootsteps : MonoBehaviour
 	public float MinSpeed = 2f;
     public float FrequencyFactor;
 	private float _timeBeforeNextStep = 0f;
-	private bool _stopped = true;
 
 	private void Start()
 	{

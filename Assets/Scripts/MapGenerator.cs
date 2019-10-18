@@ -118,24 +118,34 @@ public class MapGenerator : MonoBehaviour
 		Monster.transform.position = CellToWorld(monsterCell);
 		Monster.GetComponent<NavMeshAgent>().enabled = true;
 
-		//Place the props
-		for(int i=0; i < NumberOfProps; i++)
-		{
-			Vector2Int pos = GetRandomCellPositionInLevel();
-			Instantiate(_propsManager.Props[Random.Range(0,_propsManager.Props.Length)], CellToWorld(pos), new Quaternion(0,Random.Range(0f,1f),0,1f), transform);
-		}
-
 		//Place the collectibles
-		for(int i=0; i < _levelManager.NumberOfCollectibles; i++)
+		for (int i = 0; i < _levelManager.NumberOfCollectibles; i++)
 		{
 			Vector2Int pos;
 			do
 			{
 				pos = GetRandomCellPositionInLevel();
-			} while (occupiedCells.Exists(v => v==pos));
+			} while (occupiedCells.Exists(v => v == pos));
 			occupiedCells.Add(pos);
 			Instantiate(CollectiblePrefab, CellToWorld(pos), Quaternion.identity, transform);
 		}
+
+		//Place the props
+		for (int i=0; i < NumberOfProps; i++)
+		{
+			Vector2Int pos;
+			int k = 0; //number of iterations
+			do
+			{
+				pos = GetRandomCellPositionInLevel();
+				k++;
+			} while (occupiedCells.Exists(v => v == pos) && k<1000);
+			occupiedCells.Add(pos);
+			Vector3 randomOffset = Vector3.ProjectOnPlane(0.7f * Random.onUnitSphere * _mapGrid.cellSize.x/2, Vector3.up);
+			Instantiate(_propsManager.Props[Random.Range(0,_propsManager.Props.Length)], CellToWorld(pos) + randomOffset, new Quaternion(0,Random.Range(0f,1f),0,1f), transform);
+		}
+
+
 	}
 
 	public Vector2Int GetRandomCellPositionInLevel()
