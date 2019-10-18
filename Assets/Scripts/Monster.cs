@@ -19,10 +19,15 @@ public class Monster : MonoBehaviour
 	public float LoseSightDistance = 24f;
 	public LayerMask CantSeeThrough;
 	public float QuitChasingDelay = 5f;
+	public float TeleportationPeriod = 10f;
 
 	private Vector3 _lastSeenPlayerPosition;
 	private bool _destinationInitialized = false;
 	private float _timeBeforeQuitChasing;
+	private float _timeBeforeTeleportation;
+	private float _baseSpeed;
+
+	public int Aggressivity = 0;
 	public Vector3 CurrentDestination;
 	public bool PlayerLineObstructed;
 	public AI CurrentAI;
@@ -37,7 +42,9 @@ public class Monster : MonoBehaviour
     void Awake()
     {
 		_nav = GetComponent<NavMeshAgent>();
+		_baseSpeed = _nav.speed;
 		CurrentAI = AI.Roam;
+		_timeBeforeTeleportation = TeleportationPeriod;
 
         DroneEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/Soundscape/Drone");
         //DroneEvent.start();
@@ -62,7 +69,7 @@ public class Monster : MonoBehaviour
 					_timeBeforeQuitChasing -= Time.deltaTime;
 				}
 
-				if (_timeBeforeQuitChasing <= 0)
+				if (_timeBeforeQuitChasing <= 0) //quit chasing
 				{
 					CurrentAI = AI.Roam;
 					CurrentDestination = _lastSeenPlayerPosition;
@@ -80,10 +87,18 @@ public class Monster : MonoBehaviour
 					_nav.SetDestination(CurrentDestination);
 					_destinationInitialized = true;
 				}
+				
+				if(_timeBeforeTeleportation <= 0f)
+				{
+					Teleport();
+					_timeBeforeTeleportation = TeleportationPeriod;
+				}
+				_timeBeforeTeleportation -= Time.deltaTime;
 
-				if(PlayerDistanceInSight < SightDistance)
+				if (PlayerDistanceInSight < SightDistance) //start chase
 				{
 					_destinationInitialized = false;
+					_timeBeforeTeleportation = TeleportationPeriod;
 					CurrentAI = AI.Chase;
 
                     DroneEvent.setParameterByName("Enemy Dist", 100);
@@ -92,6 +107,37 @@ public class Monster : MonoBehaviour
 				break;
 		}
     }
+
+	public void LevelUpAggressivity(int aggressivity)
+	{
+		Aggressivity = aggressivity;
+		_nav.speed = _baseSpeed + aggressivity * 0.2f;
+		if(CurrentAI != AI.Chase)
+		{
+			Teleport();
+		}
+	}
+
+	public bool Teleport()
+	{
+		float dist = 15f + Mathf.Max(0f, (6 - Aggressivity) * 5f);
+		return Teleport(dist);
+	}
+
+	public bool Teleport(float distanceToThePlayer, float deviation = 0.25f)
+	{
+		Vector3 pos;
+		float distance;
+		int k = 0;
+		do
+		{
+			pos = MapGenerator.CellToWorld(MapGenerator.GetRandomCellPositionInLevel());
+			distance = (Player.transform.position - pos).magnitude;
+			if (k++ > 1000) return false; // teleport fail
+		} while (Mathf.Abs(1 - distance/distanceToThePlayer) > deviation);
+		transform.position = pos;
+		return true;
+	}
 
 	public float PlayerDistanceInSight
 	{

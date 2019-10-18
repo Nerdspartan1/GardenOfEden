@@ -1300,6 +1300,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   QuitChasingDelay: 5
+  TeleportationPeriod: 10
   Aggressivity: 1
   CurrentDestination: {x: 0, y: 0, z: 0}
   PlayerLineObstructed: 0
@@ -1314,7 +1315,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 1.2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1481,8 +1482,8 @@ MonoBehaviour:
     type: 3}
   CollectiblePrefab: {fileID: 4498679382261551532, guid: 946fbb837855d4b499105c1d720446d7,
     type: 3}
-  MapSize: 50
-  NumberOfSteps: 3000
+  MapSize: 40
+  NumberOfSteps: 2000
   Corridorness: 0.7
   NumberOfProps: 150
 --- !u!114 &1340689694
@@ -1497,7 +1498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b9db4638a3b9544ab6c4686ea083b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Monster: {fileID: 1324605963}
   NumberOfCollectibles: 6
+  _numberOfCollectiblesLeft: 0
 --- !u!114 &1340689695
 MonoBehaviour:
   m_ObjectHideFlags: 0
