@@ -36,7 +36,7 @@ public class Monster : MonoBehaviour
 
     //Adding fmod ambient sound + chase audio
 
-    FMOD.Studio.EventInstance DroneEvent;
+    FMOD.Studio.EventInstance EntityEvent;
     
 
     void Awake()
@@ -46,9 +46,9 @@ public class Monster : MonoBehaviour
 		CurrentAI = AI.Roam;
 		_timeBeforeTeleportation = TeleportationPeriod;
 
-        DroneEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/Soundscape/Drone");
-        //DroneEvent.start();
-        //DroneEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        EntityEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/Enemies/Entity BGM");
+        EntityEvent.start();
+        
     }
 
 	void Update()
@@ -75,11 +75,12 @@ public class Monster : MonoBehaviour
 					CurrentDestination = _lastSeenPlayerPosition;
 					_destinationInitialized = true;
 
-                    DroneEvent.setParameterByName("Enemy Dist", 0);
-                    
+                    EntityEvent.setParameterByName("Enemy Dist", 0);
+                    //DroneEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
                 }
-					
-				break;
+
+                break;
 			case AI.Roam:
 				if((transform.position - CurrentDestination).sqrMagnitude < 1f || !_destinationInitialized) //reached destination
 				{
@@ -101,7 +102,7 @@ public class Monster : MonoBehaviour
 					_timeBeforeTeleportation = TeleportationPeriod;
 					CurrentAI = AI.Chase;
 
-                    DroneEvent.setParameterByName("Enemy Dist", 100);
+                    EntityEvent.setParameterByName("Enemy Dist", 100);
                     
                 }
 				break;
