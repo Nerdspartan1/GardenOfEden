@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour
 	private Camera _camera;
 	private Grain _grain;
 	private CharacterController _controller;
+	//VFX
 	private GlitchEffect _glitchEffect;
 	private DeadPixelGenerator _deadPixelGenerator;
+	private ApocalypseFilter _apocalypseFilter;
 
 	private float _height;
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
 		_glitchEffect = GetComponentInChildren<GlitchEffect>();
 		_controller = GetComponent<CharacterController>();
 		_deadPixelGenerator = GetComponentInChildren<DeadPixelGenerator>();
+		_apocalypseFilter = GetComponentInChildren<ApocalypseFilter>();
 
 		_height = transform.position.y;
 	}
@@ -77,6 +80,8 @@ public class PlayerController : MonoBehaviour
 		_grain.intensity.value = intensityFactor;
 		_deadPixelGenerator.Intensity = intensityFactor;
 
+
+		_apocalypseFilter.enabled = (Monster.Aggressivity >= 5) && intensityFactor > 0.5f;
 	}
 
 	private void OnTriggerEnter(Collider other)

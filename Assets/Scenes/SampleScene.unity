@@ -590,9 +590,9 @@ MonoBehaviour:
   WalkSpeed: 3
   SprintSpeed: 5.5
   Stamina: 1
-  StaminaDepletionRate: 0.1
-  StaminaRegenerationRate: 0.05
-  StaminaSprintThreshold: 0.25
+  StaminaDepletionRate: 0.05
+  StaminaRegenerationRate: 0.03
+  StaminaSprintThreshold: 0.1
 --- !u!114 &723988465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,6 +757,7 @@ GameObject:
   - component: {fileID: 963194229}
   - component: {fileID: 963194232}
   - component: {fileID: 963194233}
+  - component: {fileID: 963194235}
   - component: {fileID: 963194234}
   m_Layer: 0
   m_Name: Camera
@@ -968,6 +969,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: -1
+--- !u!114 &963194235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c1db6c5e1ee6864cb82ee9f773fcdd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shader: {fileID: 963194233}
 --- !u!1 &969339385
 GameObject:
   m_ObjectHideFlags: 0
