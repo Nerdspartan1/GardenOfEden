@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\Sound\GitHub\ReversePropHunt\Desktop\Master.strings.bank
   SubDir: 
-  lastModified: 637070335506214329
+  lastModified: 637070354306294167
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -121,7 +121,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7837040531432027216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +302,23 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
+  Exists: 0
+--- !u!114 &-6406660725623268401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Items Collected
+  m_EditorClassIdentifier: 
+  Name: Items Collected
+  Min: 0
+  Max: 7
+  Default: 0
   Exists: 1
 --- !u!114 &-6313582266501091114
 MonoBehaviour:
@@ -467,7 +484,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6455397327464194065}
+  - {fileID: 3615926045598252944}
   MinDistance: 0
   MaxDistance: 0
   Length: 70000
@@ -508,9 +525,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7920859733107098180}
-  - {fileID: 3874495576493594646}
-  - {fileID: 5271724636382522677}
+  - {fileID: 4719388658803619896}
+  - {fileID: -6406660725623268401}
+  - {fileID: 3180656539237088940}
   MinDistance: 0
   MaxDistance: 0
   Length: 530000
@@ -767,7 +784,7 @@ MonoBehaviour:
   - {fileID: 1179950708555493707}
   StringsBanks:
   - {fileID: -8220047843122057995}
-  stringsBankWriteTime: 637070335506214329
+  stringsBankWriteTime: 637070354306294167
   cacheVersion: 3
 --- !u!114 &311386268392077576
 MonoBehaviour:
@@ -784,6 +801,23 @@ MonoBehaviour:
   Name: Enemy Dist
   Min: 0
   Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &321000245555126580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu/Menu
+  m_EditorClassIdentifier: 
+  Name: Menu
+  Min: 0
+  Max: 2
   Default: 0
   Exists: 1
 --- !u!114 &329894081519355231
@@ -840,11 +874,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank
   SubDir: 
-  lastModified: 637070335506130004
+  lastModified: 637070354306194992
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 4656512
+    Value: 4656608
   Exists: 1
 --- !u!114 &2288759281972616902
 MonoBehaviour:
@@ -909,6 +943,40 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 32375
+--- !u!114 &3180656539237088940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Menu
+  m_EditorClassIdentifier: 
+  Name: Menu
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &3615926045598252944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Entity BGM/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &3638647468524920919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,7 +1010,7 @@ MonoBehaviour:
   Min: 0
   Max: 7
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3997184139888101488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,6 +1028,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &4719388658803619896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &4987023591054947170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,7 +1105,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 7695248483332581573}
+  - {fileID: 321000245555126580}
   MinDistance: 0
   MaxDistance: 0
   Length: 55000
@@ -1040,7 +1125,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5898951337077704709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,7 +1210,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8930198286925272065
 MonoBehaviour:
   m_ObjectHideFlags: 0
