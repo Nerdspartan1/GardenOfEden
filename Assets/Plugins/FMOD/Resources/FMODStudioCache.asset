@@ -1,5 +1,148 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7379845572052935894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Entity Chase BGM/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &-7258726027481269900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/Death Scene
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/Death Scene
+  guid: c7f4829a85036540a931e4d469df20a4
+  Banks:
+  - {fileID: -6171113091516457944}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-6721740323379731639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:\Sound\GitHub\ReversePropHunt\Desktop\Master.strings.bank
+  SubDir: 
+  lastModified: 637071187431537526
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1296
+  Exists: 1
+--- !u!114 &-6171113091516457944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank
+  SubDir: 
+  lastModified: 637071187431423474
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 4426496
+  Exists: 1
+--- !u!114 &-2617146417943130234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Ending JP
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Ending JP
+  guid: 9b68b7cbb90775488ddbd9c4b2efe215
+  Banks:
+  - {fileID: -6171113091516457944}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-2198019655611774579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Glitchs SFX VFX
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Glitchs SFX VFX
+  guid: f72ebcd90e31cc418a411da441002d5a
+  Banks:
+  - {fileID: -6171113091516457944}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 360
+--- !u!114 &-1127768435240275386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Items Collected
+  m_EditorClassIdentifier: 
+  Name: Items Collected
+  Min: 0
+  Max: 7
+  Default: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,10 +155,217 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: -6721740323379731639}
+  - {fileID: -6171113091516457944}
+  EditorEvents:
+  - {fileID: 8017411910224797685}
+  - {fileID: 7196743012183485510}
+  - {fileID: 7850382509650630704}
+  - {fileID: 1394357918827818310}
+  - {fileID: -2617146417943130234}
+  - {fileID: 3448700355102114843}
+  - {fileID: -7258726027481269900}
+  - {fileID: 6490471343981123905}
+  - {fileID: -2198019655611774579}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  stringsBankWriteTime: 0
+  MasterBanks:
+  - {fileID: -6171113091516457944}
+  StringsBanks:
+  - {fileID: -6721740323379731639}
+  stringsBankWriteTime: 637071187431537526
   cacheVersion: 3
+--- !u!114 &1394357918827818310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundscape/Bank
+  m_EditorClassIdentifier: 
+  Path: event:/Soundscape/Bank
+  guid: 8f6a516bc7a5e3498e849023ae88bab0
+  Banks:
+  - {fileID: -6171113091516457944}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 96013
+--- !u!114 &3448700355102114843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Footsteps
+  guid: c3db233d52eac44bbb96b98fdfa71168
+  Banks:
+  - {fileID: -6171113091516457944}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 300
+--- !u!114 &4190249109731761362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu/Menu
+  m_EditorClassIdentifier: 
+  Name: Menu
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
+--- !u!114 &5460697362997847525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Enemy Dist
+  m_EditorClassIdentifier: 
+  Name: Enemy Dist
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &6478949264043948029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM/Menu
+  m_EditorClassIdentifier: 
+  Name: Menu
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
+--- !u!114 &6490471343981123905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundscape/Monolith
+  m_EditorClassIdentifier: 
+  Path: event:/Soundscape/Monolith
+  guid: f3e1fbcecdc92446bf20c80f936767c7
+  Banks:
+  - {fileID: -6171113091516457944}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 32375
+--- !u!114 &7196743012183485510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundscape/BGM
+  m_EditorClassIdentifier: 
+  Path: event:/Soundscape/BGM
+  guid: 1319248e4c5a374ea3e0936dcbd4706e
+  Banks:
+  - {fileID: -6171113091516457944}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5460697362997847525}
+  - {fileID: -1127768435240275386}
+  - {fileID: 6478949264043948029}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 530010
+--- !u!114 &7850382509650630704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/Entity Chase BGM
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/Entity Chase BGM
+  guid: 87dfcb5d9ef53642868da22e8c11ff24
+  Banks:
+  - {fileID: -6171113091516457944}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7379845572052935894}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 38000
+--- !u!114 &8017411910224797685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/Menu
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/Menu
+  guid: 01609ac80919c84eb89555234b01feb3
+  Banks:
+  - {fileID: -6171113091516457944}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4190249109731761362}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 55000
