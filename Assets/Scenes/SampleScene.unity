@@ -1428,7 +1428,7 @@ MonoBehaviour:
     type: 3}
   Tile3: {fileID: 1206840872810487767, guid: 9f6e065941ee72c4bbd322f0718171af, type: 3}
   Tile4: {fileID: 9044429071619968716, guid: a90d19f62159a1441895b7c1ee6eab04, type: 3}
-  TileModelUpVector: {x: 0, y: 0, z: 1}
+  TileModelUpVector: {x: 0, y: 1, z: 0}
 --- !u!1 &1432024392
 GameObject:
   m_ObjectHideFlags: 0

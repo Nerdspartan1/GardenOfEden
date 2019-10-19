@@ -52,7 +52,6 @@ public class TileGenerator : MonoBehaviour
 
 					var wall = Instantiate(GetTilePrefab(neighbors), transform);
 					wall.transform.position = _mapGenerator.CellToWorld(new Vector2Int(x, z));
-					//wall.transform.Rotate(TileModelRotation);
 					wall.transform.Rotate(TileModelUpVector, GetRotation(neighbors));
 					wall.layer = LayerMask.NameToLayer("LevelGeometry");
 
