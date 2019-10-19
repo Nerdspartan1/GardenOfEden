@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000229F9F8D818 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000023869DF7E58 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -19,160 +19,14 @@
 [LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
 [LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SystemI::createSound                     : filename = D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 00000229894521F8 : node = 00000229894500A0
-[LOG] SystemI::createSound                     : add node to async list : head = 00000229F9BACA18.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000229894521F8
-[LOG] SystemI::createSoundInternal             :     Create name='D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4578720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 77888
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000229894501B0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BGM_Void_1', format=2, channels=2, frequency=48000, lengthbytes=395872, lengthpcm=1578000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
-[LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000229894521F8
-[LOG] SoundI::getSubSound                      : sound 00000229894521F8.  Subsound index 0 / 1
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000022989453998
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000022989453998
-[LOG] SoundI::release                          : BGM_Void_1 (00000229894521F8)
-[LOG] SoundI::release                          :     BGM_Void_1 (0000022989834678)
-[LOG] SoundI::release                          :     BGM_Void_1 (0000022989453998)
+[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
 [LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SystemI::createSound                     : filename = D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000022989452A68 : node = 0000022989450820
-[LOG] SystemI::createSound                     : add node to async list : head = 00000229F9BACA18.  list count = 0
-[LOG] SystemI::createSound                     : filename = D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000022989452708 : node = 00000229894501E0
-[LOG] SystemI::createSound                     : add node to async list : head = 00000229F9BACA18.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000022989452A68
-[LOG] SystemI::createSound                     : filename = D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank : mode 02010082
-[LOG] SystemI::createSoundInternal             :     Create name='D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank', mode=0x02010082
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSound                     :     setdata soundi = 0000022989453998 : node = 00000229894505A0
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4578720
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000229F9BACA18.  list count = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 77888
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSound                     :     filename = D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank : mode 02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000022989450930
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSound                     :     setdata soundi = 0000022989453128 : node = 00000229894500A0
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000229F9BACA18.  list count = 2
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSound                     :     filename = D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank : mode 02010082
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 00000229894521F8 : node = 0000022989450320
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000229F9BACA18.  list count = 3
-[LOG] SystemI::createSound                     :     filename = D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank : mode 02010082
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 00000229894532D8 : node = 0000022989450460
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000229F9BACA18.  list count = 4
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BGM_Void_1', format=2, channels=2, frequency=48000, lengthbytes=395872, lengthpcm=1578000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000022989452A68
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000022989452708
-[LOG] SystemI::createSoundInternal             :     Create name='D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4578720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 77888
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000229894502F0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Drone_bass_1', format=2, channels=2, frequency=48000, lengthbytes=182560, lengthpcm=2568000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000022989452708
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000022989453998
-[LOG] SystemI::createSoundInternal             :     Create name='D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4578720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 77888
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000229894506B0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BGM_Void_1_3_chase', format=2, channels=2, frequency=48000, lengthbytes=393504, lengthpcm=1576675, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000022989453998
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000022989453128
-[LOG] SystemI::createSoundInternal             :     Create name='D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4578720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 77888
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000229894501B0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BGM_Synth_noise', format=2, channels=2, frequency=48000, lengthbytes=787392, lengthpcm=2826000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000022989453128
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000229894521F8
-[LOG] SystemI::createSoundInternal             :     Create name='D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4578720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 77888
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000022989450430
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Noise_Rain_verb_1', format=2, channels=2, frequency=48000, lengthbytes=1249216, lengthpcm=4608659, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000229894521F8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000229894532D8
-[LOG] SystemI::createSoundInternal             :     Create name='D:\Sound\GitHub\ReversePropHunt\Desktop\Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4578720
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 77888
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000022989450570
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BGM_Wind_noise', format=2, channels=2, frequency=48000, lengthbytes=758240, lengthpcm=2664000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000229894532D8
-[LOG] SoundI::getSubSound                      : sound 0000022989452A68.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 0000022989452708.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 0000022989453998.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 0000022989453128.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 00000229894521F8.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 00000229894532D8.  Subsound index 0 / 1
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000022989453488
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000022989453488
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000022989451E98
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000022989451E98
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000022989453638
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000022989453638
-[LOG] SoundI::release                          : BGM_Wind_noise (00000229894532D8)
-[LOG] SoundI::release                          :     BGM_Wind_noise (0000022989836F18)
-[LOG] SoundI::release                          :     BGM_Wind_noise (0000022989451CE8)
-[LOG] SoundI::release                          : Noise_Rain_verb_1 (00000229894521F8)
-[LOG] SoundI::release                          :     Noise_Rain_verb_1 (0000022989835038)
-[LOG] SoundI::release                          :     Noise_Rain_verb_1 (00000229894523A8)
-[LOG] SoundI::release                          : BGM_Synth_noise (0000022989453128)
-[LOG] SoundI::release                          :     BGM_Synth_noise (0000022989835B98)
-[LOG] SoundI::release                          :     BGM_Synth_noise (0000022989453638)
-[LOG] SoundI::release                          : BGM_Void_1_3_chase (0000022989453998)
-[LOG] SoundI::release                          :     BGM_Void_1_3_chase (0000022989836D78)
-[LOG] SoundI::release                          :     BGM_Void_1_3_chase (0000022989452558)
-[LOG] SoundI::release                          : Drone_bass_1 (0000022989452708)
-[LOG] SoundI::release                          :     Drone_bass_1 (00000229898363B8)
-[LOG] SoundI::release                          :     Drone_bass_1 (0000022989451E98)
-[LOG] SoundI::release                          : BGM_Void_1 (0000022989452A68)
-[LOG] SoundI::release                          :     BGM_Void_1 (0000022989837F58)
-[LOG] SoundI::release                          :     BGM_Void_1 (0000022989453488)
+[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
+[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
+[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
