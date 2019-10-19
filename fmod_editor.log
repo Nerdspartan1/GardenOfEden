@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000023869DF7E58 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000017272172E28 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,41 +15,656 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_1', format=2, channels=2, frequency=48000, lengthbytes=4832, lengthpcm=18000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_1', format=2, channels=2, frequency=48000, lengthbytes=7552, lengthpcm=30000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_6', format=2, channels=2, frequency=48000, lengthbytes=4608, lengthpcm=18000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_5', format=2, channels=2, frequency=48000, lengthbytes=3456, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_2', format=2, channels=2, frequency=48000, lengthbytes=1728, lengthpcm=6000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_3', format=2, channels=2, frequency=48000, lengthbytes=1760, lengthpcm=6000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_2', format=2, channels=2, frequency=48000, lengthbytes=3232, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_3', format=2, channels=2, frequency=48000, lengthbytes=4672, lengthpcm=18000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_7', format=2, channels=2, frequency=48000, lengthbytes=6336, lengthpcm=24000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_5', format=2, channels=2, frequency=48000, lengthbytes=6240, lengthpcm=24000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_4', format=2, channels=2, frequency=48000, lengthbytes=3296, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000172724249A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_4', format=2, channels=2, frequency=48000, lengthbytes=3136, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SoundI::release                          :  (00000172007B8418)
+[LOG] SoundI::release                          :     Glitch2_1 (000001720071DAD8)
+[LOG] SoundI::release                          :  (00000172007B8588)
+[LOG] SoundI::release                          :     Glitch2_2 (000001720071E7D8)
+[LOG] SoundI::release                          :  (00000172007B89D8)
+[LOG] SoundI::release                          :     Glitch2_3 (0000017200720D38)
+[LOG] SoundI::release                          :  (00000172007C0E58)
+[LOG] SoundI::release                          :     Glitch2_4 (000001720071F678)
+[LOG] SoundI::release                          :  (00000172007B8138)
+[LOG] SoundI::release                          :     Glitch2_5 (000001720071EE58)
+[LOG] SoundI::release                          :  (00000172007B82A8)
+[LOG] SoundI::release                          :     Glitch_1 (000001720071DE18)
+[LOG] SoundI::release                          :  (00000172007B8CB8)
+[LOG] SoundI::release                          :     Glitch_2 (000001720071DC78)
+[LOG] SoundI::release                          :  (00000172007B8E28)
+[LOG] SoundI::release                          :     Glitch_3 (0000017200721078)
+[LOG] SoundI::release                          :  (00000172007C1588)
+[LOG] SoundI::release                          :     Glitch_4 (0000017200720858)
+[LOG] SoundI::release                          :  (00000172007B8868)
+[LOG] SoundI::release                          :     Glitch_5 (000001720071F4D8)
+[LOG] SoundI::release                          :  (00000172007B8B48)
+[LOG] SoundI::release                          :     Glitch_6 (000001720071D938)
+[LOG] SoundI::release                          :  (00000172007B86F8)
+[LOG] SoundI::release                          :     Glitch_7 (0000017200720ED8)
 [LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_1', format=2, channels=2, frequency=48000, lengthbytes=4832, lengthpcm=18000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_1', format=2, channels=2, frequency=48000, lengthbytes=7552, lengthpcm=30000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_6', format=2, channels=2, frequency=48000, lengthbytes=4608, lengthpcm=18000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_5', format=2, channels=2, frequency=48000, lengthbytes=3456, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_2', format=2, channels=2, frequency=48000, lengthbytes=1728, lengthpcm=6000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_3', format=2, channels=2, frequency=48000, lengthbytes=1760, lengthpcm=6000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_2', format=2, channels=2, frequency=48000, lengthbytes=3232, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_3', format=2, channels=2, frequency=48000, lengthbytes=4672, lengthpcm=18000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_7', format=2, channels=2, frequency=48000, lengthbytes=6336, lengthpcm=24000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_5', format=2, channels=2, frequency=48000, lengthbytes=6240, lengthpcm=24000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_4', format=2, channels=2, frequency=48000, lengthbytes=3296, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_4', format=2, channels=2, frequency=48000, lengthbytes=3136, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SoundI::release                          :  (00000172007BF178)
+[LOG] SoundI::release                          :     Glitch2_1 (000001726BA554F8)
+[LOG] SoundI::release                          :  (00000172007BFE68)
+[LOG] SoundI::release                          :     Glitch2_2 (0000017200617DF8)
+[LOG] SoundI::release                          :  (00000172007BF2E8)
+[LOG] SoundI::release                          :     Glitch2_3 (00000172006175D8)
+[LOG] SoundI::release                          :  (0000017200AB1D78)
+[LOG] SoundI::release                          :     Glitch2_4 (0000017200616598)
+[LOG] SoundI::release                          :  (00000172007BF5C8)
+[LOG] SoundI::release                          :     Glitch2_5 (0000017200616C18)
+[LOG] SoundI::release                          :  (00000172007BFB88)
+[LOG] SoundI::release                          :     Glitch_1 (0000017200618C98)
+[LOG] SoundI::release                          :  (00000172007BF738)
+[LOG] SoundI::release                          :     Glitch_2 (0000017200618618)
+[LOG] SoundI::release                          :  (00000172007BF8A8)
+[LOG] SoundI::release                          :     Glitch_3 (0000017200618E38)
+[LOG] SoundI::release                          :  (0000017200AB1EE8)
+[LOG] SoundI::release                          :     Glitch_4 (00000172006168D8)
+[LOG] SoundI::release                          :  (00000172007BFCF8)
+[LOG] SoundI::release                          :     Glitch_5 (0000017200615A38)
+[LOG] SoundI::release                          :  (00000172007BF458)
+[LOG] SoundI::release                          :     Glitch_6 (0000017200619178)
+[LOG] SoundI::release                          :  (00000172007BFA18)
+[LOG] SoundI::release                          :     Glitch_7 (0000017200618958)
 [LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] SystemI::close                           : Closed.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_1', format=2, channels=2, frequency=48000, lengthbytes=4832, lengthpcm=18000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_1', format=2, channels=2, frequency=48000, lengthbytes=7552, lengthpcm=30000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_6', format=2, channels=2, frequency=48000, lengthbytes=4608, lengthpcm=18000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_5', format=2, channels=2, frequency=48000, lengthbytes=3456, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_2', format=2, channels=2, frequency=48000, lengthbytes=1728, lengthpcm=6000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_3', format=2, channels=2, frequency=48000, lengthbytes=1760, lengthpcm=6000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_2', format=2, channels=2, frequency=48000, lengthbytes=3232, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_3', format=2, channels=2, frequency=48000, lengthbytes=4672, lengthpcm=18000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_7', format=2, channels=2, frequency=48000, lengthbytes=6336, lengthpcm=24000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_5', format=2, channels=2, frequency=48000, lengthbytes=6240, lengthpcm=24000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch2_4', format=2, channels=2, frequency=48000, lengthbytes=3296, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 4299712
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 126784
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000685CE4F47C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF88A266E60
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF88A266E30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF88A266F30
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF88A266FF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017272424BB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Glitch_4', format=2, channels=2, frequency=48000, lengthbytes=3136, lengthpcm=12000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SoundI::release                          :  (0000017200AB0CF8)
+[LOG] SoundI::release                          :     Glitch2_1 (000001726BA554F8)
+[LOG] SoundI::release                          :  (0000017200AB08A8)
+[LOG] SoundI::release                          :     Glitch2_2 (0000017200619178)
+[LOG] SoundI::release                          :  (0000017200AB0E68)
+[LOG] SoundI::release                          :     Glitch2_3 (0000017200618478)
+[LOG] SoundI::release                          :  (0000017200ACF708)
+[LOG] SoundI::release                          :     Glitch2_4 (00000172006175D8)
+[LOG] SoundI::release                          :  (0000017200AB0B88)
+[LOG] SoundI::release                          :     Glitch2_5 (0000017200616738)
+[LOG] SoundI::release                          :  (0000017200AB0A18)
+[LOG] SoundI::release                          :     Glitch_1 (0000017200617438)
+[LOG] SoundI::release                          :  (0000017200AB05C8)
+[LOG] SoundI::release                          :     Glitch_2 (0000017200619318)
+[LOG] SoundI::release                          :  (0000017200AB0458)
+[LOG] SoundI::release                          :     Glitch_3 (0000017200616598)
+[LOG] SoundI::release                          :  (0000017200ACFE38)
+[LOG] SoundI::release                          :     Glitch_4 (0000017200617298)
+[LOG] SoundI::release                          :  (0000017200AB0738)
+[LOG] SoundI::release                          :     Glitch_5 (0000017200617918)
+[LOG] SoundI::release                          :  (0000017200AB1148)
+[LOG] SoundI::release                          :     Glitch_6 (0000017200618FD8)
+[LOG] SoundI::release                          :  (0000017200AB0FD8)
+[LOG] SoundI::release                          :     Glitch_7 (0000017200615F18)
