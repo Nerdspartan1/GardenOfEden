@@ -27,7 +27,7 @@ public class Monster : MonoBehaviour
 	private float _timeBeforeTeleportation;
 	private float _baseSpeed;
 
-	public int Aggressivity = 0;
+	public int Aggressivity;
 	public Vector3 CurrentDestination;
 	public bool PlayerLineObstructed;
 	public AI CurrentAI;
@@ -45,6 +45,7 @@ public class Monster : MonoBehaviour
 		_baseSpeed = _nav.speed;
 		CurrentAI = AI.Roam;
 		_timeBeforeTeleportation = TeleportationPeriod;
+		Aggressivity = 0;
 
         EntityEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/Enemies/Entity BGM");
         EntityEvent.start();

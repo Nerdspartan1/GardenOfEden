@@ -5,7 +5,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerController : MonoBehaviour
 {
-	public GameObject Monster;
+	public Monster Monster;
 
 	public float cameraSensitivityX = 100f;
 	public float cameraSensitivityY = 100f;
@@ -66,9 +66,11 @@ public class PlayerController : MonoBehaviour
 
 	private void UpdateEffects()
 	{
-		float sqrDistanceToMonster = (Monster.transform.position - transform.position).sqrMagnitude;
-		float intensityFactor = Mathf.Min(1f, 10f*10f / sqrDistanceToMonster); //max intensity at 10 meter
+		float distanceToMonster = Monster.PlayerDistanceInSight;
+		float intensityFactor = Mathf.Min(1f, 10f / distanceToMonster); //max intensity at 10 meter
 
+		float minIntensity = 0.1f * Mathf.Max(0, Monster.Aggressivity - 3);
+		intensityFactor = Mathf.Max(minIntensity, intensityFactor);
 		_glitchEffect.intensity = intensityFactor;
 		_glitchEffect.flipIntensity = intensityFactor;
 		_glitchEffect.colorIntensity = intensityFactor > 0.2f ? intensityFactor : 0f; //add dead zone here bc even low factor changes color significantly

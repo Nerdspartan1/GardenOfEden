@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour
 	void Start()
     {
 		_numberOfCollectiblesLeft = NumberOfCollectibles;
-		Monster.Aggressivity = 0;
     }
 
 	public void Collect()
