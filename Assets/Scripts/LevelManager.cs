@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+[RequireComponent(typeof(TileGenerator))]
 public class LevelManager : MonoBehaviour
 {
 
@@ -11,11 +12,13 @@ public class LevelManager : MonoBehaviour
 	public int NumberOfCollectibles;
 	[SerializeField]
 	private int _numberOfCollectiblesLeft;
+	
 
 
 	private void Awake()
 	{
 		Instance = this;
+		
 	}
 
 	void Start()
@@ -40,6 +43,7 @@ public class LevelManager : MonoBehaviour
 			Monster.LevelUpAggressivity(NumberOfCollectibles - _numberOfCollectiblesLeft);
 		}
 	}
+
 
 	public void WriteMessage()
 	{

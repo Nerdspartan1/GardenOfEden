@@ -8,6 +8,8 @@ public class TileGenerator : MonoBehaviour
 {
 
 	private MapGenerator _mapGenerator;
+	public Transform WallsParent;
+	public GameObject Ground;
 
 	public GameObject Tile0;
 	public GameObject Tile1;
@@ -50,7 +52,7 @@ public class TileGenerator : MonoBehaviour
 					if (z == 0 || map[x][z - 1] == CellType.Wall)						  neighbors |= Neighbors.South;
 					if (z == _mapGenerator.MapSize - 1 || map[x][z + 1] == CellType.Wall) neighbors |= Neighbors.North;
 
-					var wall = Instantiate(GetTilePrefab(neighbors), transform);
+					var wall = Instantiate(GetTilePrefab(neighbors), WallsParent);
 					wall.transform.position = _mapGenerator.CellToWorld(new Vector2Int(x, z));
 					wall.transform.Rotate(TileModelUpVector, GetRotation(neighbors));
 					wall.layer = LayerMask.NameToLayer("LevelGeometry");
