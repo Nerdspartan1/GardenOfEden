@@ -567,8 +567,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723988459}
-  m_LocalRotation: {x: 0.0021879894, y: 0.99433607, z: -0.10418768, w: 0.020879868}
-  m_LocalPosition: {x: 287.8403, y: 117.08163, z: 297.28662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -50, y: 0, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -1192,7 +1192,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   QuitChasingDelay: 5
-  TeleportationPeriod: 10
+  TeleportationPeriod: 20
   Aggressivity: 1
   CurrentDestination: {x: 0, y: 0, z: 0}
   PlayerLineObstructed: 0
@@ -1207,7 +1207,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.2
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

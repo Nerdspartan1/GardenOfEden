@@ -23,10 +23,22 @@ public class LevelManager : MonoBehaviour
 		_numberOfCollectiblesLeft = NumberOfCollectibles;
     }
 
+	//DEBUG
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.P))
+		{
+			Collect();
+		}
+	}
+
 	public void Collect()
 	{
-		_numberOfCollectiblesLeft--;
-		Monster.LevelUpAggressivity(NumberOfCollectibles - _numberOfCollectiblesLeft);
+		if (_numberOfCollectiblesLeft > 0)
+		{
+			_numberOfCollectiblesLeft--;
+			Monster.LevelUpAggressivity(NumberOfCollectibles - _numberOfCollectiblesLeft);
+		}
 	}
 
 	public void WriteMessage()
