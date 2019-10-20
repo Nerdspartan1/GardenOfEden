@@ -27,7 +27,7 @@ public class GameOver : MonoBehaviour
 		Monster.GetComponent<NavMeshAgent>().enabled = false;
 		CreepyImage.transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height));
 
-        FMODUnity.RuntimeManager.PlayOneShot("event:/BGM/Death Scene");
+        
 
 		float time = 0f;
 		while(time < AnimationDuration)
