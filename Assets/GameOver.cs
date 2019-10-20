@@ -27,9 +27,9 @@ public class GameOver : MonoBehaviour
 		Monster.GetComponent<NavMeshAgent>().enabled = false;
 		CreepyImage.transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height));
 
-        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Ending Jumpscare Lose");
 
-		float time = 0f;
+        float time = 0f;
 		while(time < AnimationDuration)
 		{
 			Black.color = new Color(0, 0, 0, 1-Black.color.a);
