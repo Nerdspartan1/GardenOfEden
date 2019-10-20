@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 	public static LevelManager Instance;
 	public Monster Monster;
 	private PropsManager _propsManager;
+	private Ending _ending;
 	[SerializeField]
 	private int _numberOfCollectiblesLeft;
 	
@@ -22,6 +23,7 @@ public class LevelManager : MonoBehaviour
 	{
 		Instance = this;
 		_propsManager = GetComponent<PropsManager>();
+		_ending = GetComponent<Ending>();
 	}
 
 	void Start()
@@ -49,6 +51,10 @@ public class LevelManager : MonoBehaviour
 
 			_numberOfCollectiblesLeft--;
 			Monster.LevelUpAggressivity(_propsManager.Collectibles.Length - _numberOfCollectiblesLeft);
+			if(_numberOfCollectiblesLeft == 0)
+			{
+				_ending.enabled = true;
+			}
 		}
 	}
 

@@ -115,7 +115,7 @@ public class MapGenerator : MonoBehaviour
 		Monster.GetComponent<NavMeshAgent>().Warp(CellToWorld(monsterCell));
 
 		//Place the collectibles
-		for (int i = 0; i < _propsManager.Collectibles.Length-1; i++)
+		for (int i = 0; i < _propsManager.Collectibles.Length; i++)
 		{
 			Vector2Int pos;
 			do
