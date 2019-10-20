@@ -1454,8 +1454,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Props:
-  - {fileID: 3083092806581703743, guid: 23aa95e15a17b344d805915316bf266f, type: 3}
-  - {fileID: 191200794742611978, guid: 9c3576bf3d5e1a946a1db4168a038e31, type: 3}
+  - {fileID: 8697363322802323313, guid: 0b1b19e254e431943a7500db1031333e, type: 3}
+  - {fileID: 4914814760996553357, guid: b7ef608eceb5f9745bd249cad13b6f2b, type: 3}
+  - {fileID: 8065503704576982139, guid: 42446064115e833499baf43adbf64223, type: 3}
+  - {fileID: 3275815447095153648, guid: 151e374334abb654caa9248171e697b4, type: 3}
+  - {fileID: 8327301587539042496, guid: 2b8fd9719db417c4aa2356dee7f6413d, type: 3}
 --- !u!114 &1340689696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6591,7 +6594,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ec3b511793a213d44aa84004b7653c6f, type: 2}
+  - {fileID: 2100000, guid: 20054a74de93c7447b89189151ca84ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
