@@ -15,6 +15,7 @@ public class Monster : MonoBehaviour
 	public PlayerController Player;
 	public MapGenerator MapGenerator;
 	public PropsManager PropsManager;
+	public GameOver GameOver;
 
 	public float SightDistance = 18f;
 	public float LoseSightDistance = 24f;
@@ -22,12 +23,14 @@ public class Monster : MonoBehaviour
 	public float QuitChasingDelay = 5f;
 	public float TeleportationPeriod = 10f;
 	public float AggressivitySpeedGain = 0.5f;
+	public float CatchDistance = 3f;
 
 	private Vector3 _lastSeenPlayerPosition;
 	private bool _destinationInitialized = false;
 	private float _timeBeforeQuitChasing;
 	private float _timeBeforeTeleportation;
 	private float _baseSpeed;
+	private bool _caughtPlayer = false;
 
 	public int Aggressivity;
 	public Vector3 CurrentDestination;
@@ -65,62 +68,72 @@ public class Monster : MonoBehaviour
 
 	void Update()
 	{
-		PlayerLineObstructed = Physics.Linecast(transform.position, Player.transform.position,CantSeeThrough);
-		switch (CurrentAI) {
-			case AI.Chase:
-				_nav.SetDestination(Player.transform.position);
-				var distanceToPlayer = (transform.position - Player.transform.position).magnitude;
-				if (PlayerDistanceInSight < LoseSightDistance)
-				{
-					_timeBeforeQuitChasing = QuitChasingDelay;
-				}
-				else
-				{
-					if (_timeBeforeQuitChasing == QuitChasingDelay) //just lost sight
-						_lastSeenPlayerPosition = Player.transform.position;
-					_timeBeforeQuitChasing -= Time.deltaTime;
-				}
+		if (!_caughtPlayer)
+		{
+			PlayerLineObstructed = Physics.Linecast(transform.position, Player.transform.position, CantSeeThrough);
+			switch (CurrentAI)
+			{
+				case AI.Chase:
+					_nav.SetDestination(Player.transform.position);
+					var distanceToPlayer = (transform.position - Player.transform.position).magnitude;
+					if (PlayerDistanceInSight < LoseSightDistance)
+					{
+						_timeBeforeQuitChasing = QuitChasingDelay;
+					}
+					else
+					{
+						if (_timeBeforeQuitChasing == QuitChasingDelay) //just lost sight
+							_lastSeenPlayerPosition = Player.transform.position;
+						_timeBeforeQuitChasing -= Time.deltaTime;
+					}
 
-				if (_timeBeforeQuitChasing <= 0) //quit chasing
-				{
-					CurrentAI = AI.Roam;
-					CurrentDestination = _lastSeenPlayerPosition;
-					_destinationInitialized = true;
+					if (_timeBeforeQuitChasing <= 0) //quit chasing
+					{
+						CurrentAI = AI.Roam;
+						CurrentDestination = _lastSeenPlayerPosition;
+						_destinationInitialized = true;
 
-                    FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
-                    EntityEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                    //EntityEvent.release();
+						FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
+						EntityEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+						//EntityEvent.release();
 
-                }
+					}
 
-                break;
-			case AI.Roam:
-				if((transform.position - CurrentDestination).sqrMagnitude < 1f || !_destinationInitialized) //reached destination
-				{
-					CurrentDestination = MapGenerator.CellToWorld(MapGenerator.GetRandomCellPositionInLevel());
-					_nav.SetDestination(CurrentDestination);
-					_destinationInitialized = true;
-				}
-				
-				if(_timeBeforeTeleportation <= 0f)
-				{
-					Teleport();
-					SwitchAppearance();
-					_timeBeforeTeleportation = TeleportationPeriod;
-				}
-				_timeBeforeTeleportation -= Time.deltaTime;
+					break;
+				case AI.Roam:
+					if ((transform.position - CurrentDestination).sqrMagnitude < 1f || !_destinationInitialized) //reached destination
+					{
+						CurrentDestination = MapGenerator.CellToWorld(MapGenerator.GetRandomCellPositionInLevel());
+						_nav.SetDestination(CurrentDestination);
+						_destinationInitialized = true;
+					}
 
-				if (PlayerDistanceInSight < SightDistance) //start chase
-				{
-					_destinationInitialized = false;
-					_timeBeforeTeleportation = TeleportationPeriod;
-					CurrentAI = AI.Chase;
+					if (_timeBeforeTeleportation <= 0f)
+					{
+						Teleport();
+						SwitchAppearance();
+						_timeBeforeTeleportation = TeleportationPeriod;
+					}
+					_timeBeforeTeleportation -= Time.deltaTime;
 
-                    EntityEvent.start();
-                    FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 100f);
-                    
-                }
-				break;
+					if (PlayerDistanceInSight < SightDistance) //start chase
+					{
+						_destinationInitialized = false;
+						_timeBeforeTeleportation = TeleportationPeriod;
+						CurrentAI = AI.Chase;
+
+						EntityEvent.start();
+						FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 100f);
+
+					}
+					break;
+			}
+
+			if (PlayerDistance < CatchDistance)
+			{
+				_caughtPlayer = true;
+				GameOver.enabled = true;
+			}
 		}
 	}
 

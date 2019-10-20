@@ -1364,6 +1364,7 @@ MonoBehaviour:
   Player: {fileID: 723988460}
   MapGenerator: {fileID: 1340689693}
   PropsManager: {fileID: 1340689695}
+  GameOver: {fileID: 1340689698}
   SightDistance: 18
   LoseSightDistance: 24
   CantSeeThrough:
@@ -1372,6 +1373,7 @@ MonoBehaviour:
   QuitChasingDelay: 10
   TeleportationPeriod: 20
   AggressivitySpeedGain: 0.5
+  CatchDistance: 3
   Aggressivity: 1
   CurrentDestination: {x: 0, y: 0, z: 0}
   PlayerLineObstructed: 0
@@ -1427,6 +1429,7 @@ GameObject:
   - component: {fileID: 1340689695}
   - component: {fileID: 1340689696}
   - component: {fileID: 1340689697}
+  - component: {fileID: 1340689698}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -1603,6 +1606,24 @@ MonoBehaviour:
   ActivationDistance: 3
   WallDestructionRate: 200
   TimeBeforeGroundDisappear: 3
+--- !u!114 &1340689698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340689689}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b0cc183c2b0fd44b61d2eb6c8b0cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 723988460}
+  Monster: {fileID: 1324605963}
+  Black: {fileID: 2138820507}
+  CreepyImage: {fileID: 0}
+  BlinkRate: 60
+  AnimationDuration: 1
 --- !u!1 &1432024392
 GameObject:
   m_ObjectHideFlags: 0

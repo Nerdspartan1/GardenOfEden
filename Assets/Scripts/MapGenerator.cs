@@ -102,7 +102,7 @@ public class MapGenerator : MonoBehaviour
 
 		//Place the player
 		Vector2Int playerCell = GetRandomCellPositionInLevel();
-		Player.transform.position = CellToWorld(playerCell) + 1f*Vector3.up;
+		Player.transform.position = CellToWorld(playerCell) + 2f*Vector3.up;
 		occupiedCells.Add(playerCell);
 
 		//Place the entity at least one third of the map size away from the player
