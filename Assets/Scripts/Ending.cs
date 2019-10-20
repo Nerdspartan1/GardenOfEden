@@ -58,7 +58,7 @@ public class Ending : MonoBehaviour
 			instance.GetComponent<Collectible>().enabled = false;
 
 			float angle = 6.28f * (float)i / (float)PropsManager.Collectibles.Length;
-			instance.transform.position = Monolith.transform.position + monolithDistance*(Mathf.Cos(angle)*Vector3.forward + Mathf.Sin(angle)*Vector3.right);
+			instance.transform.position = Monolith.transform.position + 2f*Vector3.up + monolithDistance*(Mathf.Cos(angle)*Vector3.forward + Mathf.Sin(angle)*Vector3.right);
 
 			collectibles.Add(instance);
 		}
