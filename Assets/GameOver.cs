@@ -26,6 +26,8 @@ public class GameOver : MonoBehaviour
 		Player.enabled = false;
 		Monster.GetComponent<NavMeshAgent>().enabled = false;
 
+        FMODUnity.RuntimeManager.PlayOneShot("event:/BGM/Death Scene");
+
 		float time = 0f;
 		while(time < AnimationDuration)
 		{

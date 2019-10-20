@@ -134,6 +134,8 @@ public class Monster : MonoBehaviour
 				_caughtPlayer = true;
 				GameOver.enabled = true;
 
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Ending Jumpscare Lose");
+
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
                 EntityEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                 EntityEvent.release();

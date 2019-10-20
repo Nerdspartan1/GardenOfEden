@@ -42,6 +42,7 @@ public class Ending : MonoBehaviour
 			Monster.gameObject.SetActive(false);
 			Monster.transform.position = new Vector3(0, 1000f, 0);
 			_endingInitiated = true;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Win Ending");
 		}
 	}
 

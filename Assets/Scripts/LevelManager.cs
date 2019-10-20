@@ -49,6 +49,8 @@ public class LevelManager : MonoBehaviour
 		{
 			_numberOfCollectiblesLeft--;
 			Monster.LevelUpAggressivity(_propsManager.Collectibles.Length - _numberOfCollectiblesLeft);
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Item Pickup");
             SoundscapeEvent.setParameterByName("Items Collected", (float)Monster.Aggressivity);
             
             if (_numberOfCollectiblesLeft == 0)
