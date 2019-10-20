@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 	public GameObject Menu;
 
     FMOD.Studio.Bus MasterBus;
+    FMOD.Studio.EventInstance MenuMusicEvent;
 
     void Awake()
     {
@@ -18,22 +19,36 @@ public class GameManager : MonoBehaviour
 		Game.SetActive(false);
 		Menu.SetActive(true);
 		Cursor.lockState = CursorLockMode.None;
+
+    }
+
+    void Start()
+    {
+        MenuMusicEvent = FMODUnity.RuntimeManager.CreateInstance("event:/BGM/Menu");
+        MenuMusicEvent.start();
     }
 
 	public void StartGame()
 	{
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Button");
 		Menu.SetActive(false);
 		Game.SetActive(true);
+        //MenuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Menu", 0f);
+        MenuMusicEvent.release();
 	}
 
 	public void RestartGame()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-	}
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Menu", 1f);
+        MenuMusicEvent.start();
+    }
 
 	public void Quit()
 	{
-		Application.Quit();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Button");
+        Application.Quit();
 	}
 
 }

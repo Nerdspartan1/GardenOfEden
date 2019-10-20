@@ -39,10 +39,17 @@ public class GlitchEffect : MonoBehaviour
 	private float _flickerTime = 0.5f;
 	private Material _material;
 
-	void Start()
+    FMOD.Studio.PARAMETER_DESCRIPTION pd;
+    FMOD.Studio.PARAMETER_ID EnemyDistID;
+
+    void Start()
 	{
 		_material = new Material(Shader);
-	}
+
+        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("Enemy Dist", out pd);
+        EnemyDistID = pd.id;
+
+    }
 
 	// Called by camera to apply image effect
 	void OnRenderImage(RenderTexture source, RenderTexture destination)
@@ -75,7 +82,8 @@ public class GlitchEffect : MonoBehaviour
 
 				_material.SetFloat("flip_up", flip_up);
 
-				if (flip_up > 0.7f) FMODUnity.RuntimeManager.PlayOneShot(FlipSound);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 100 * flipIntensity);
+                if (flip_up > 0.7f) FMODUnity.RuntimeManager.PlayOneShot(FlipSound);
 
 			}
 
