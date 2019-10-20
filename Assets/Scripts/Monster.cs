@@ -35,10 +35,12 @@ public class Monster : MonoBehaviour
 
 	private NavMeshAgent _nav;
 
-    //Adding fmod ambient sound + chase audio
+    //Adding fmod entity sound + chase audio
 
     FMOD.Studio.EventInstance EntityEvent;
-    
+
+    FMOD.Studio.PARAMETER_DESCRIPTION pd;
+    FMOD.Studio.PARAMETER_ID EnemyDistID;
 
     void Awake()
     {
@@ -55,7 +57,9 @@ public class Monster : MonoBehaviour
 		SwitchAppearance();
 
 		EntityEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Enemies/Entity Chase BGM");
-		EntityEvent.start();
+
+        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("Enemy Dist", out pd);
+        EnemyDistID = pd.id;
 	}
 
 	void Update()
@@ -82,8 +86,9 @@ public class Monster : MonoBehaviour
 					CurrentDestination = _lastSeenPlayerPosition;
 					_destinationInitialized = true;
 
-                    EntityEvent.setParameterByName("Enemy Dist", 0);
-                    //DroneEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
+                    EntityEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    //EntityEvent.release();
 
                 }
 
@@ -110,7 +115,8 @@ public class Monster : MonoBehaviour
 					_timeBeforeTeleportation = TeleportationPeriod;
 					CurrentAI = AI.Chase;
 
-                    EntityEvent.setParameterByName("Enemy Dist", 100);
+                    EntityEvent.start();
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 100f);
                     
                 }
 				break;

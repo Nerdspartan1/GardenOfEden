@@ -12,10 +12,12 @@ public class LevelManager : MonoBehaviour
 	public int NumberOfCollectibles;
 	[SerializeField]
 	private int _numberOfCollectiblesLeft;
-	
 
+    //Adding fmod entity sound + chase audio
 
-	private void Awake()
+    FMOD.Studio.EventInstance SoundscapeEvent;
+
+    private void Awake()
 	{
 		Instance = this;
 		
@@ -24,6 +26,9 @@ public class LevelManager : MonoBehaviour
 	void Start()
     {
 		_numberOfCollectiblesLeft = NumberOfCollectibles;
+
+        SoundscapeEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Soundscape/BGM");
+        SoundscapeEvent.start();
     }
 
 	//DEBUG
@@ -39,6 +44,8 @@ public class LevelManager : MonoBehaviour
 	{
 		if (_numberOfCollectiblesLeft > 0)
 		{
+            SoundscapeEvent.setParameterByName("Items Collected", 1f);
+
 			_numberOfCollectiblesLeft--;
 			Monster.LevelUpAggressivity(NumberOfCollectibles - _numberOfCollectiblesLeft);
 		}
