@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5304826927493772158}
   - component: {fileID: 1919112434207592327}
   - component: {fileID: 8651515584983934113}
+  - component: {fileID: 203650597}
   m_Layer: 0
   m_Name: Tile_1u
   m_TagString: Untagged
@@ -90,5 +91,19 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Size: {x: 1.5, y: 3, z: 3}
+  m_Center: {x: -0.75, y: 1.5, z: -0}
+--- !u!136 &203650597
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188826398812060507}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.5000001
+  m_Height: 3.3840497
+  m_Direction: 1
+  m_Center: {x: -0.00000011920929, y: 1.6920248, z: -0.00000035762787}

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2551984786331710426}
   - component: {fileID: 8094923252298370851}
   - component: {fileID: 486182190097247690}
+  - component: {fileID: 6489604194371525902}
+  - component: {fileID: 2388255396479992066}
   m_Layer: 0
   m_Name: Tile_2ur
   m_TagString: Untagged
@@ -90,5 +92,32 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.5, y: 3, z: 3}
+  m_Center: {x: 0.75, y: 1.5, z: 0}
+--- !u!65 &6489604194371525902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7523869848579439615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 1.5}
+  m_Center: {x: 0, y: 1.5, z: 0.75}
+--- !u!136 &2388255396479992066
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7523869848579439615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.5
+  m_Height: 3.3840497
+  m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
