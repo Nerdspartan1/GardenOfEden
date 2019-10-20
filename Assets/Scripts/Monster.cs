@@ -27,7 +27,7 @@ public class Monster : MonoBehaviour
 	private float _timeBeforeTeleportation;
 	private float _baseSpeed;
 
-	public int Aggressivity = 0;
+	public int Aggressivity;
 	public Vector3 CurrentDestination;
 	public bool PlayerLineObstructed;
 	public AI CurrentAI;
@@ -45,8 +45,9 @@ public class Monster : MonoBehaviour
 		_baseSpeed = _nav.speed;
 		CurrentAI = AI.Roam;
 		_timeBeforeTeleportation = TeleportationPeriod;
+		Aggressivity = 0;
 
-        EntityEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/Enemies/Entity BGM");
+        EntityEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/Enemies/Entity Chase BGM");
         EntityEvent.start();
         
     }
@@ -112,7 +113,7 @@ public class Monster : MonoBehaviour
 	public void LevelUpAggressivity(int aggressivity)
 	{
 		Aggressivity = aggressivity;
-		_nav.speed = _baseSpeed + aggressivity * 0.2f;
+		_nav.speed = _baseSpeed + aggressivity * 0.4f;
 		if(CurrentAI != AI.Chase)
 		{
 			Teleport();
@@ -125,7 +126,7 @@ public class Monster : MonoBehaviour
 		return Teleport(dist);
 	}
 
-	public bool Teleport(float distanceToThePlayer, float deviation = 0.25f)
+	public bool Teleport(float distanceToThePlayer, float deviation = 0.3f)
 	{
 		Vector3 pos;
 		float distance;
@@ -136,7 +137,8 @@ public class Monster : MonoBehaviour
 			distance = (Player.transform.position - pos).magnitude;
 			if (k++ > 1000) return false; // teleport fail
 		} while (Mathf.Abs(1 - distance/distanceToThePlayer) > deviation);
-		transform.position = pos;
+		_nav.Warp(pos);
+		_destinationInitialized = false;
 		return true;
 	}
 

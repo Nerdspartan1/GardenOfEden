@@ -115,8 +115,7 @@ public class MapGenerator : MonoBehaviour
 			monsterCell = GetRandomCellPositionInLevel();
 		} while ((monsterCell - playerCell).sqrMagnitude < MapSize * MapSize / 9);
 
-		Monster.transform.position = CellToWorld(monsterCell);
-		Monster.GetComponent<NavMeshAgent>().enabled = true;
+		Monster.GetComponent<NavMeshAgent>().Warp(CellToWorld(monsterCell));
 
 		//Place the collectibles
 		for (int i = 0; i < _levelManager.NumberOfCollectibles; i++)

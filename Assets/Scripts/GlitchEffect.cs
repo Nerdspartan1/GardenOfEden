@@ -18,6 +18,8 @@ public class GlitchEffect : MonoBehaviour
 {
 	public Texture2D displacementMap;
 	public Shader Shader;
+
+	public string FlipSound;
 	[Header("Glitch Intensity")]
 
 	[Range(0, 1)]
@@ -66,13 +68,16 @@ public class GlitchEffect : MonoBehaviour
 		_glitchup += Time.deltaTime * flipIntensity;
 		if (_glitchup > _glitchupTime)
 		{
-        
-            if (Random.value < 0.1f * flipIntensity)
+			if (Random.value < 0.1f * flipIntensity)
             {
-             //good spot
-                _material.SetFloat("flip_up", Random.Range(0, 1f) * flipIntensity);
-            }
+				//good spot
+				float flip_up = Random.Range(0, 1f) * flipIntensity;
 
+				_material.SetFloat("flip_up", flip_up);
+
+				if (flip_up > 0.7f) FMODUnity.RuntimeManager.PlayOneShot(FlipSound);
+
+			}
 
             else
                 _material.SetFloat("flip_up", 0);

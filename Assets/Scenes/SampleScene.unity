@@ -409,7 +409,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: effeeaf3e85d2bb4088ed24f36ae9ffd, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ce4322824ea7d4b821fc8189990055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 1324605961}
+  Monster: {fileID: 1324605963}
   cameraSensitivityX: 300
   cameraSensitivityY: 300
   MoveSpeed: 6
@@ -597,8 +597,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723988459}
-  m_LocalRotation: {x: 0.0021879894, y: 0.99433607, z: -0.10418768, w: 0.020879868}
-  m_LocalPosition: {x: 287.8403, y: 117.08163, z: 297.28662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -50, y: 0, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -620,9 +620,9 @@ MonoBehaviour:
   WalkSpeed: 3
   SprintSpeed: 5.5
   Stamina: 1
-  StaminaDepletionRate: 0.1
-  StaminaRegenerationRate: 0.05
-  StaminaSprintThreshold: 0.25
+  StaminaDepletionRate: 0.05
+  StaminaRegenerationRate: 0.03
+  StaminaSprintThreshold: 0.1
 --- !u!114 &723988465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +788,7 @@ GameObject:
   - component: {fileID: 963194232}
   - component: {fileID: 963194233}
   - component: {fileID: 963194234}
+  - component: {fileID: 963194235}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -874,6 +875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displacementMap: {fileID: 2800000, guid: 06f78f153ffeabb48a573382cb310e73, type: 3}
   Shader: {fileID: 4800000, guid: 04f78d91f1067e545b34c632164dd5bb, type: 3}
+  FlipSound: event:/Enemies/Glitchs SFX VFX
   intensity: 0
   flipIntensity: 0
   colorIntensity: 0
@@ -998,6 +1000,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: -1
+--- !u!114 &963194235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20949d68c9e83da4f8e375cdf835a4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shader: {fileID: 963194233}
 --- !u!1 &969339385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1069,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: effeeaf3e85d2bb4088ed24f36ae9ffd, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -1223,7 +1238,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   QuitChasingDelay: 5
-  TeleportationPeriod: 10
+  TeleportationPeriod: 20
   Aggressivity: 1
   CurrentDestination: {x: 0, y: 0, z: 0}
   PlayerLineObstructed: 0
@@ -1238,7 +1253,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.2
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1477,7 +1492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WallDestructionRate: 200
-  TimeBeforeGroundDisappear: 4
+  TimeBeforeGroundDisappear: 3
 --- !u!1 &1432024392
 GameObject:
   m_ObjectHideFlags: 0
@@ -6773,7 +6788,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: effeeaf3e85d2bb4088ed24f36ae9ffd, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -6785,7 +6800,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Title
+  m_Text: Garden of Eden
 --- !u!222 &2077575684
 CanvasRenderer:
   m_ObjectHideFlags: 0
