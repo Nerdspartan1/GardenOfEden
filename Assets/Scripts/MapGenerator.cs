@@ -65,9 +65,11 @@ public class MapGenerator : MonoBehaviour
 		// start in the middle
 		Vector2Int roamerPos = new Vector2Int(MapSize / 2, MapSize / 2);
 		Vector2Int roamerDir = new Vector2Int(1, 0);
-		Map[roamerPos.x][roamerPos.y] = CellType.Clear;
+		for(int i = -1; i <= 1; ++i)
+			for(int j = -1; j <= 1; ++j)
+				Map[roamerPos.x+i][roamerPos.y+j] = CellType.Clear;
 
-		for(int k = 0; k < NumberOfSteps; ++k)
+		for (int k = 0; k < NumberOfSteps; ++k)
 		{
 			// calculate direction
 			float rand = Random.Range(0f, 1f);
