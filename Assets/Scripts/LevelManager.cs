@@ -50,6 +50,7 @@ public class LevelManager : MonoBehaviour
 			_numberOfCollectiblesLeft--;
 			Monster.LevelUpAggressivity(_propsManager.Collectibles.Length - _numberOfCollectiblesLeft);
             SoundscapeEvent.setParameterByName("Items Collected", (float)Monster.Aggressivity);
+            
             if (_numberOfCollectiblesLeft == 0)
 			{
 				_ending.enabled = true;

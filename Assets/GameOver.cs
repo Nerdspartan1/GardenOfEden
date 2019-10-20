@@ -14,6 +14,8 @@ public class GameOver : MonoBehaviour
 	public float BlinkRate = 20f;
 	public float AnimationDuration = 1f;
 
+    public LevelManager LevelManager;
+
 	private void OnEnable()
 	{
 		StartCoroutine(GameOverAnimation());
@@ -32,6 +34,10 @@ public class GameOver : MonoBehaviour
 			time += 1f / BlinkRate;
 		}
 
-		GameManager.Instance.RestartGame();
+        LevelManager.SoundscapeEvent.setParameterByName("Items Collected", 0f);
+        LevelManager.SoundscapeEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        LevelManager.SoundscapeEvent.release();
+
+        GameManager.Instance.RestartGame();
 	}
 }

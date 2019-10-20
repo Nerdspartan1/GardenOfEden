@@ -20,12 +20,17 @@ public class GameManager : MonoBehaviour
 		Menu.SetActive(true);
 		Cursor.lockState = CursorLockMode.None;
 
+    }
+
+    void Start()
+    {
         MenuMusicEvent = FMODUnity.RuntimeManager.CreateInstance("event:/BGM/Menu");
         MenuMusicEvent.start();
     }
 
 	public void StartGame()
 	{
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Button");
 		Menu.SetActive(false);
 		Game.SetActive(true);
         //MenuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -42,7 +47,8 @@ public class GameManager : MonoBehaviour
 
 	public void Quit()
 	{
-		Application.Quit();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Button");
+        Application.Quit();
 	}
 
 }

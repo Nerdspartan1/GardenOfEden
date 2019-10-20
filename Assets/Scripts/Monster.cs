@@ -135,7 +135,7 @@ public class Monster : MonoBehaviour
 				GameOver.enabled = true;
 
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
-                EntityEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                EntityEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                 EntityEvent.release();
             }
 		}
