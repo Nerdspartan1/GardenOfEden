@@ -601,9 +601,9 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.3
-  m_SlopeLimit: 0
-  m_StepOffset: 0
+  m_Radius: 0.15
+  m_SlopeLimit: 20
+  m_StepOffset: 0.5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -1447,6 +1447,8 @@ MonoBehaviour:
   - {fileID: 1102667493495217398, guid: 1a6101b9b04a97d4fa6b539bf7f307a4, type: 3}
   - {fileID: 6927505180243330749, guid: a1bcd1624cc8a3148986f62d5d89eec8, type: 3}
   - {fileID: 2756081716986195655, guid: fc6a730706338ed4498ee3a439697b6e, type: 3}
+  - {fileID: 156545364324147317, guid: 1bc301cb98a06984ab16dedd72e5f44c, type: 3}
+  - {fileID: 1870022695795622206, guid: 869320b4b9cf97a4daec931d2f097e82, type: 3}
 --- !u!114 &1340689696
 MonoBehaviour:
   m_ObjectHideFlags: 0
