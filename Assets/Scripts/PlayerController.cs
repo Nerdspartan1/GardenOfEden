@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
 
 	private float rotationY = 0F;
 
-	private Camera _camera;
+	[HideInInspector]
+	public Camera Camera;
 	private Grain _grain;
 	private CharacterController _controller;
 	//VFX
@@ -26,8 +27,8 @@ public class PlayerController : MonoBehaviour
 
 	private void Awake()
 	{
-		_camera = GetComponentInChildren<Camera>();
-		_grain = _camera.GetComponent<PostProcessVolume>().sharedProfile.GetSetting<Grain>();
+		Camera = GetComponentInChildren<Camera>();
+		_grain = Camera.GetComponent<PostProcessVolume>().sharedProfile.GetSetting<Grain>();
 		_glitchEffect = GetComponentInChildren<GlitchEffect>();
 		_controller = GetComponent<CharacterController>();
 		_deadPixelGenerator = GetComponentInChildren<DeadPixelGenerator>();
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
 		rotationY = Mathf.Clamp(rotationY, -70f, +70f);
 
 		transform.localEulerAngles = new Vector3(0, rotationX, 0);
-		_camera.transform.localEulerAngles = new Vector3(-rotationY, 0, 0);
+		Camera.transform.localEulerAngles = new Vector3(-rotationY, 0, 0);
 	}
 
 	private void UpdateMovement()

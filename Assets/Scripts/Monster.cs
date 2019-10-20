@@ -12,7 +12,7 @@ public class Monster : MonoBehaviour
 		Trap
 	}
 
-	public GameObject Player;
+	public PlayerController Player;
 	public MapGenerator MapGenerator;
 	public PropsManager PropsManager;
 
@@ -126,6 +126,7 @@ public class Monster : MonoBehaviour
 			Teleport();
 		}
 		RenderSettings.fogColor = 1f * Color.red + (1f - (float)Aggressivity / 6f) * (Color.cyan);
+		Player.Camera.backgroundColor = RenderSettings.fogColor;
 	}
 
 	public bool Teleport()

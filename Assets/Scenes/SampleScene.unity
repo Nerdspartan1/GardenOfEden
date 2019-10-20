@@ -588,6 +588,7 @@ MonoBehaviour:
   cameraSensitivityX: 300
   cameraSensitivityY: 300
   MoveSpeed: 6
+  Camera: {fileID: 0}
 --- !u!143 &723988461
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1259,7 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1226bbf34a468e1418af0262c75276a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 723988459}
+  Player: {fileID: 723988460}
   MapGenerator: {fileID: 1340689693}
   PropsManager: {fileID: 1340689695}
   SightDistance: 18
@@ -1443,6 +1444,9 @@ MonoBehaviour:
   - {fileID: 8065503704576982139, guid: 42446064115e833499baf43adbf64223, type: 3}
   - {fileID: 3275815447095153648, guid: 151e374334abb654caa9248171e697b4, type: 3}
   - {fileID: 8327301587539042496, guid: 2b8fd9719db417c4aa2356dee7f6413d, type: 3}
+  - {fileID: 1102667493495217398, guid: 1a6101b9b04a97d4fa6b539bf7f307a4, type: 3}
+  - {fileID: 6927505180243330749, guid: a1bcd1624cc8a3148986f62d5d89eec8, type: 3}
+  - {fileID: 2756081716986195655, guid: fc6a730706338ed4498ee3a439697b6e, type: 3}
 --- !u!114 &1340689696
 MonoBehaviour:
   m_ObjectHideFlags: 0
