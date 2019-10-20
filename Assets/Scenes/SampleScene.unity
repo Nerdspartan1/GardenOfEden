@@ -1697,6 +1697,7 @@ MonoBehaviour:
   CreepyImage: {fileID: 328601823}
   BlinkRate: 60
   AnimationDuration: 1
+  LevelManager: {fileID: 1340689694}
 --- !u!1 &1432024392
 GameObject:
   m_ObjectHideFlags: 0

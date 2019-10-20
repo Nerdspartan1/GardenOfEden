@@ -36,7 +36,14 @@ public class GameOver : MonoBehaviour
 			time += 1f / BlinkRate;
 		}
 
-        LevelManager.SoundscapeEvent.setParameterByName("Items Collected", 0f);
+        FMOD.Studio.PARAMETER_DESCRIPTION pd;
+        FMOD.Studio.PARAMETER_ID EnemyDistID;
+
+        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("Enemy Dist", out pd);
+        EnemyDistID = pd.id;
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
+        //LevelManager.SoundscapeEvent.setParameterByName("Items Collected", 0f);
         LevelManager.SoundscapeEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         LevelManager.SoundscapeEvent.release();
 
