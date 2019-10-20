@@ -15,9 +15,9 @@ public class LevelManager : MonoBehaviour
 	private int _numberOfCollectiblesLeft;
 	
 
-    //Adding fmod entity sound + chase audio
+    //Adding fmod item progression and soundscape
 
-    FMOD.Studio.EventInstance SoundscapeEvent;
+    public FMOD.Studio.EventInstance SoundscapeEvent;
 
     private void Awake()
 	{
@@ -47,11 +47,10 @@ public class LevelManager : MonoBehaviour
 	{
 		if (_numberOfCollectiblesLeft > 0)
 		{
-            SoundscapeEvent.setParameterByName("Items Collected", 1f);
-
 			_numberOfCollectiblesLeft--;
 			Monster.LevelUpAggressivity(_propsManager.Collectibles.Length - _numberOfCollectiblesLeft);
-			if(_numberOfCollectiblesLeft == 0)
+            SoundscapeEvent.setParameterByName("Items Collected", (float)Monster.Aggressivity);
+            if (_numberOfCollectiblesLeft == 0)
 			{
 				_ending.enabled = true;
 			}
