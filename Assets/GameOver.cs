@@ -23,11 +23,13 @@ public class GameOver : MonoBehaviour
 	{
 		Player.enabled = false;
 		Monster.GetComponent<NavMeshAgent>().enabled = false;
+		CreepyImage.transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height));
 
 		float time = 0f;
 		while(time < AnimationDuration)
 		{
 			Black.color = new Color(0, 0, 0, 1-Black.color.a);
+			CreepyImage.color = new Color(1, 1, 1, Black.color.a);
 			yield return new WaitForSeconds(1f/BlinkRate);
 			time += 1f / BlinkRate;
 		}

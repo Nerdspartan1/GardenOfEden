@@ -24,6 +24,7 @@ public class Monster : MonoBehaviour
 	public float TeleportationPeriod = 10f;
 	public float AggressivitySpeedGain = 0.5f;
 	public float CatchDistance = 3f;
+	public float TeleportationPeriodGain = 2f;
 
 	private Vector3 _lastSeenPlayerPosition;
 	private bool _destinationInitialized = false;
@@ -112,7 +113,7 @@ public class Monster : MonoBehaviour
 					{
 						Teleport();
 						SwitchAppearance();
-						_timeBeforeTeleportation = TeleportationPeriod;
+						_timeBeforeTeleportation = TeleportationPeriod - Aggressivity*TeleportationPeriodGain;
 					}
 					_timeBeforeTeleportation -= Time.deltaTime;
 
