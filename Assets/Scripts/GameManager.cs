@@ -19,8 +19,9 @@ public class GameManager : MonoBehaviour
 		Game.SetActive(false);
 		Menu.SetActive(true);
 		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
 
-    }
+	}
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
         //MenuMusicEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Menu", 0f);
         MenuMusicEvent.release();
+		Cursor.visible = false;
 	}
 
 	public void RestartGame()

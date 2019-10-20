@@ -42,6 +42,22 @@ public class PlayerController : MonoBehaviour
 		UpdateCameraRotation();
 		UpdateMovement();
 		UpdateEffects();
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			FMOD.Studio.PARAMETER_DESCRIPTION pd;
+			FMOD.Studio.PARAMETER_ID EnemyDistID;
+
+			FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("Enemy Dist", out pd);
+			EnemyDistID = pd.id;
+
+			FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
+
+			LevelManager.Instance.SoundscapeEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+			LevelManager.Instance.SoundscapeEvent.release();
+
+			GameManager.Instance.RestartGame();
+		}
 	}
 
 	private void UpdateCameraRotation()
