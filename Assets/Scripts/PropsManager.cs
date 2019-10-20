@@ -6,4 +6,9 @@ public class PropsManager : MonoBehaviour
 {
 	public GameObject[] Props;
 
+	public GameObject GetRandomProp()
+	{
+		return Props[Random.Range(0, Props.Length - 1)];
+	}
+
 }

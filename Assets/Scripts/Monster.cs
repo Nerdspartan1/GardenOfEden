@@ -14,6 +14,7 @@ public class Monster : MonoBehaviour
 
 	public GameObject Player;
 	public MapGenerator MapGenerator;
+	public PropsManager PropsManager;
 
 	public float SightDistance = 18f;
 	public float LoseSightDistance = 24f;
@@ -42,15 +43,20 @@ public class Monster : MonoBehaviour
     void Awake()
     {
 		_nav = GetComponent<NavMeshAgent>();
+		_nav.updateRotation = false;
+    }
+
+	private void Start()
+	{
 		_baseSpeed = _nav.speed;
 		CurrentAI = AI.Roam;
-		_timeBeforeTeleportation = TeleportationPeriod;
 		Aggressivity = 0;
+		_timeBeforeTeleportation = TeleportationPeriod;
+		SwitchAppearance();
 
-        EntityEvent = FMODUnity.RuntimeManager.CreateInstance ("event:/Enemies/Entity Chase BGM");
-        EntityEvent.start();
-        
-    }
+		EntityEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Enemies/Entity Chase BGM");
+		EntityEvent.start();
+	}
 
 	void Update()
 	{
@@ -93,6 +99,7 @@ public class Monster : MonoBehaviour
 				if(_timeBeforeTeleportation <= 0f)
 				{
 					Teleport();
+					SwitchAppearance();
 					_timeBeforeTeleportation = TeleportationPeriod;
 				}
 				_timeBeforeTeleportation -= Time.deltaTime;
@@ -108,7 +115,7 @@ public class Monster : MonoBehaviour
                 }
 				break;
 		}
-    }
+	}
 
 	public void LevelUpAggressivity(int aggressivity)
 	{
@@ -118,6 +125,7 @@ public class Monster : MonoBehaviour
 		{
 			Teleport();
 		}
+		RenderSettings.fogColor = 1f * Color.red + (1f - (float)Aggressivity / 6f) * (Color.cyan);
 	}
 
 	public bool Teleport()
@@ -140,6 +148,16 @@ public class Monster : MonoBehaviour
 		_nav.Warp(pos);
 		_destinationInitialized = false;
 		return true;
+	}
+
+	public void SwitchAppearance()
+	{
+		Destroy(transform.GetChild(0).gameObject);
+		var prop = Instantiate(PropsManager.GetRandomProp(),transform);
+		prop.transform.localPosition = new Vector3(0,-0.56f,0);
+		prop.transform.localEulerAngles = new Vector3(0, Random.Range(0, 360f), 0);
+		prop.isStatic = false;
+		prop.GetComponent<Collider>().enabled = false;
 	}
 
 	public float PlayerDistanceInSight
