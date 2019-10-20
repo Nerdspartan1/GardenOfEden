@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-[RequireComponent(typeof(TileGenerator))]
+[RequireComponent(typeof(PropsManager))]
 public class LevelManager : MonoBehaviour
 {
 
 	public static LevelManager Instance;
 	public Monster Monster;
-	public int NumberOfCollectibles;
+	private PropsManager _propsManager;
 	[SerializeField]
 	private int _numberOfCollectiblesLeft;
+	
 
     //Adding fmod entity sound + chase audio
 
@@ -20,12 +21,12 @@ public class LevelManager : MonoBehaviour
     private void Awake()
 	{
 		Instance = this;
-		
+		_propsManager = GetComponent<PropsManager>();
 	}
 
 	void Start()
     {
-		_numberOfCollectiblesLeft = NumberOfCollectibles;
+		_numberOfCollectiblesLeft = _propsManager.Collectibles.Length;
 
         SoundscapeEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Soundscape/BGM");
         SoundscapeEvent.start();
@@ -47,7 +48,7 @@ public class LevelManager : MonoBehaviour
             SoundscapeEvent.setParameterByName("Items Collected", 1f);
 
 			_numberOfCollectiblesLeft--;
-			Monster.LevelUpAggressivity(NumberOfCollectibles - _numberOfCollectiblesLeft);
+			Monster.LevelUpAggressivity(_propsManager.Collectibles.Length - _numberOfCollectiblesLeft);
 		}
 	}
 

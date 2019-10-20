@@ -21,6 +21,7 @@ public class Monster : MonoBehaviour
 	public LayerMask CantSeeThrough;
 	public float QuitChasingDelay = 5f;
 	public float TeleportationPeriod = 10f;
+	public float AggressivitySpeedGain = 0.5f;
 
 	private Vector3 _lastSeenPlayerPosition;
 	private bool _destinationInitialized = false;
@@ -126,7 +127,7 @@ public class Monster : MonoBehaviour
 	public void LevelUpAggressivity(int aggressivity)
 	{
 		Aggressivity = aggressivity;
-		_nav.speed = _baseSpeed + aggressivity * 0.4f;
+		_nav.speed = _baseSpeed + aggressivity * AggressivitySpeedGain;
 		if(CurrentAI != AI.Chase)
 		{
 			Teleport();

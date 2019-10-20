@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if(other.tag == "Collectible")
 		{
-			Destroy(other.gameObject);
+			other.GetComponent<Collectible>().PickUp();
 			LevelManager.Instance.Collect();
 		}
 	}

@@ -115,7 +115,7 @@ public class MapGenerator : MonoBehaviour
 		Monster.GetComponent<NavMeshAgent>().Warp(CellToWorld(monsterCell));
 
 		//Place the collectibles
-		for (int i = 0; i < _levelManager.NumberOfCollectibles; i++)
+		for (int i = 0; i < _propsManager.Collectibles.Length-1; i++)
 		{
 			Vector2Int pos;
 			do
@@ -123,7 +123,8 @@ public class MapGenerator : MonoBehaviour
 				pos = GetRandomCellPositionInLevel();
 			} while (occupiedCells.Exists(v => v == pos));
 			occupiedCells.Add(pos);
-			Instantiate(CollectiblePrefab, CellToWorld(pos), Quaternion.identity, transform);
+			var collectible = Instantiate(_propsManager.Collectibles[i], CellToWorld(pos), Quaternion.identity, transform);
+			collectible.GetComponent<Collectible>().Player = Player;
 		}
 
 		//Place the props

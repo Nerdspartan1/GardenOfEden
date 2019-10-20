@@ -5,6 +5,7 @@ using UnityEngine;
 public class PropsManager : MonoBehaviour
 {
 	public GameObject[] Props;
+	public GameObject[] Collectibles;
 
 	public GameObject GetRandomProp()
 	{
