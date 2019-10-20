@@ -138,7 +138,7 @@ public class MapGenerator : MonoBehaviour
 			} while (occupiedCells.Exists(v => v == pos) && k<1000);
 			occupiedCells.Add(pos);
 			Vector3 randomOffset = Vector3.ProjectOnPlane(0.7f * Random.onUnitSphere * _mapGrid.cellSize.x/2, Vector3.up);
-			Instantiate(_propsManager.Props[Random.Range(0,_propsManager.Props.Length)], CellToWorld(pos) + randomOffset, new Quaternion(0,Random.Range(0f,1f),0,1f), transform);
+			Instantiate(_propsManager.Props[Random.Range(0,_propsManager.Props.Length)], CellToWorld(pos) + randomOffset, Quaternion.Euler(0,Random.Range(0f,360f),0), transform);
 		}
 		//Bake the navmesh
 		_navSurface.BuildNavMesh();
