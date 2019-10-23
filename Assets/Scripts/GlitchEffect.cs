@@ -66,18 +66,19 @@ public class GlitchEffect : MonoBehaviour
 			flicker = 0;
 			_flickerTime = Random.value;
 
-         //good spot
+            FMODUnity.RuntimeManager.PlayOneShot(FlipSound);
+            
 		}
 
 		if (colorIntensity == 0)
 			_material.SetFloat("filterRadius", 0);
-
+        //Nope
 		_glitchup += Time.deltaTime * flipIntensity;
 		if (_glitchup > _glitchupTime)
 		{
 			if (Random.value < 0.1f * flipIntensity)
             {
-				//good spot
+				
 				float flip_up = Random.Range(0, 1f) * flipIntensity;
 
 				_material.SetFloat("flip_up", flip_up);
@@ -89,13 +90,14 @@ public class GlitchEffect : MonoBehaviour
 
             else
                 _material.SetFloat("flip_up", 0);
-        
+            //nope
             _glitchup = 0;
 			_glitchupTime = Random.value / 10f;
 		}
 
 		if (flipIntensity == 0)
 			_material.SetFloat("flip_up", 0);
+        //nope
         
         _glitchdown += Time.deltaTime * flipIntensity;
         
@@ -104,24 +106,30 @@ public class GlitchEffect : MonoBehaviour
          
             if (Random.value < 0.1f * flipIntensity)
             {
-             //good spot
+                FMODUnity.RuntimeManager.PlayOneShot(FlipSound);
+                
                 _material.SetFloat("flip_down", 1 - Random.Range(0, 1f) * flipIntensity);
             }
             else
             
                 _material.SetFloat("flip_down", 1);
 
-			_glitchdown = 0;
+            //Add this line for extra chaos
+            //FMODUnity.RuntimeManager.PlayOneShot(FlipSound);
+
+            _glitchdown = 0;
 			_glitchdownTime = Random.value / 10f;
 		}
 
 		if (flipIntensity == 0)
 			_material.SetFloat("flip_down", 1);
-
+        //Nope
         
         if (Random.value < 0.05 * intensity)
 		{
-         //could be used but limit instances
+            //remove for less frequent
+            FMODUnity.RuntimeManager.PlayOneShot(FlipSound);
+
             _material.SetFloat("displace", Random.value * intensity);
 			_material.SetFloat("scale", 1 - Random.value * intensity);
 		}
