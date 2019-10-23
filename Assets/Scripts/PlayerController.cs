@@ -6,6 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class PlayerController : MonoBehaviour
 {
 	public Monster Monster;
+	public GameObject Monolith;
 
 	public float cameraSensitivityX = 100f;
 	public float cameraSensitivityY = 100f;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
 	[HideInInspector]
 	public Camera Camera;
 	private Grain _grain;
+	private ChromaticAberration _chromaticAberration;
 	private CharacterController _controller;
 	//VFX
 	private GlitchEffect _glitchEffect;
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
 	{
 		Camera = GetComponentInChildren<Camera>();
 		_grain = Camera.GetComponent<PostProcessVolume>().sharedProfile.GetSetting<Grain>();
+		_chromaticAberration = Camera.GetComponent<PostProcessVolume>().sharedProfile.GetSetting<ChromaticAberration>();
 		_glitchEffect = GetComponentInChildren<GlitchEffect>();
 		_controller = GetComponent<CharacterController>();
 		_deadPixelGenerator = GetComponentInChildren<DeadPixelGenerator>();
@@ -101,6 +104,10 @@ public class PlayerController : MonoBehaviour
 		_deadPixelGenerator.Intensity = intensityFactor;
 
 		_apocalypseFilter.enabled = (Monster.Aggressivity >= 5) && intensityFactor > 0.5f;
+
+		float sqrDistanceToMonolith = (transform.position - Monolith.transform.position).sqrMagnitude;
+		float intensityFactor_monolith = Mathf.Min(1f, 3f*3f / sqrDistanceToMonolith); //max intensity at 3 meter
+		_chromaticAberration.intensity.value = intensityFactor_monolith;
 	}
 
 	private void OnTriggerEnter(Collider other)

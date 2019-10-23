@@ -139,6 +139,7 @@ public class MapGenerator : MonoBehaviour
 				pos = GetRandomCellPositionInLevel();
 				k++;
 			} while (occupiedCells.Exists(v => v == pos) && k<1000);
+			if (k == 1000) continue;
 			occupiedCells.Add(pos);
 			Vector3 randomOffset = Vector3.ProjectOnPlane(0.7f * Random.onUnitSphere * _mapGrid.cellSize.x/2, Vector3.up);
 			Instantiate(_propsManager.Props[Random.Range(0,_propsManager.Props.Length)], CellToWorld(pos) + randomOffset, Quaternion.Euler(0,Random.Range(0f,360f),0), transform);
