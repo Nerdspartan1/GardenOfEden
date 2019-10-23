@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
 
 	public GameObject Game;
 	public GameObject Menu;
+
+	public Toggle AzertyToggle;
 
     FMOD.Studio.Bus MasterBus;
     FMOD.Studio.EventInstance MenuMusicEvent;
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour
     {
         MenuMusicEvent = FMODUnity.RuntimeManager.CreateInstance("event:/BGM/Menu");
         MenuMusicEvent.start();
+
+		AzertyToggle.isOn = PlayerPrefs.GetInt("azerty",0) == 1;
     }
 
 	public void StartGame()
@@ -52,5 +57,6 @@ public class GameManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Button");
         Application.Quit();
 	}
+
 
 }

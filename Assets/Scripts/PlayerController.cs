@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
 	private float rotationY = 0F;
 
+	public bool Azerty = false;
+
 	[HideInInspector]
 	public Camera Camera;
 	private Grain _grain;
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
 		_apocalypseFilter = GetComponentInChildren<ApocalypseFilter>();
 
 		_height = transform.position.y;
+
 	}
 
 	void Update()
@@ -74,8 +77,8 @@ public class PlayerController : MonoBehaviour
 
 	private void UpdateMovement()
 	{
-		float forwardInput = Input.GetAxis("Vertical");
-		float lateralInput = Input.GetAxis("Horizontal");
+		float forwardInput = Azerty ? Input.GetAxis("VerticalAzerty") : Input.GetAxis("Vertical");
+		float lateralInput = Azerty ? Input.GetAxis("HorizontalAzerty") : Input.GetAxis("Horizontal");
 
 		Vector3 movement = transform.forward * forwardInput + transform.right * lateralInput;
 		// cap the max speed so that the player doesn't go faster diagonally
@@ -108,4 +111,11 @@ public class PlayerController : MonoBehaviour
 			LevelManager.Instance.Collect();
 		}
 	}
+
+	public void SetAzerty(bool azerty)
+	{
+		Azerty = azerty;
+		PlayerPrefs.SetInt("azerty", azerty ? 1 : 0);
+	}
+
 }
