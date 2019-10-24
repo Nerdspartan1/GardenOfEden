@@ -153,6 +153,7 @@ public class Monster : MonoBehaviour
 			Teleport();
 		}
 		RenderSettings.fogColor = 1f * Color.red + (1f - (float)Aggressivity / 6f) * (Color.cyan);
+
 		Player.Camera.backgroundColor = RenderSettings.fogColor;
 	}
 

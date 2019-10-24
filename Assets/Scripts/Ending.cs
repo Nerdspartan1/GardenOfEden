@@ -42,7 +42,10 @@ public class Ending : MonoBehaviour
 			Monster.gameObject.SetActive(false);
 			Monster.transform.position = new Vector3(0, 1000f, 0);
 			_endingInitiated = true;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Win Ending");
+
+			Player.GetComponentInChildren<GlitchEffect>().enabled = false;
+			FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Enemy Dist", 0f);
+			FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Win Ending");
 		}
 	}
 

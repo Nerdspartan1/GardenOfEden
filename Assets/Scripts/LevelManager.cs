@@ -37,10 +37,10 @@ public class LevelManager : MonoBehaviour
 	//DEBUG
 	//private void Update()
 	//{
-	//	//if (Input.GetKeyDown(KeyCode.P))
-	//	//{
-	//	//	Collect();
-	//	//}
+	//	if (Input.GetKeyDown(KeyCode.P))
+	//	{
+	//		Collect();
+	//	}
 	//}
 
 	public void Collect()
