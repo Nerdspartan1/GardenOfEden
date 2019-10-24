@@ -83,6 +83,7 @@ public class GlitchEffect : MonoBehaviour
 
 				_material.SetFloat("flip_up", flip_up);
 
+                
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 100 * flipIntensity);
                 FMODUnity.RuntimeManager.PlayOneShot(FlipSound);
 
