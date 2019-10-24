@@ -96,7 +96,7 @@ public class Monster : MonoBehaviour
 
 						FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
 						//EntityEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-						EntityEvent.release();
+						//EntityEvent.release();
 
 					}
 

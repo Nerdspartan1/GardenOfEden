@@ -17,7 +17,9 @@ public class PlayerController : MonoBehaviour
 
 	public bool Azerty = false;
 
-	[HideInInspector]
+    FMOD.Studio.Bus EverythingbutMenuBus;
+
+    [HideInInspector]
 	public Camera Camera;
 	private Grain _grain;
 	private ChromaticAberration _chromaticAberration;
@@ -41,6 +43,8 @@ public class PlayerController : MonoBehaviour
 
 		_height = transform.position.y;
 
+        EverythingbutMenuBus = FMODUnity.RuntimeManager.GetBus("Bus:/Everything but Menu");
+
 	}
 
 	void Update()
@@ -63,6 +67,9 @@ public class PlayerController : MonoBehaviour
 			LevelManager.Instance.SoundscapeEvent.release();
 
 			GameManager.Instance.RestartGame();
+
+            EverythingbutMenuBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
 		}
 	}
 

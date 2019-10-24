@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
 	public Toggle AzertyToggle;
 
-    FMOD.Studio.Bus MasterBus;
+    
     FMOD.Studio.EventInstance MenuMusicEvent;
 
     void Awake()
