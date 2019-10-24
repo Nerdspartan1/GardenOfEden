@@ -1795,10 +1795,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 723988459}
   Monster: {fileID: 1324605961}
-  WallPrefab: {fileID: 8243245590133828102, guid: 4c0ab232cfc153a46804b87fc80ff6a5,
-    type: 3}
-  CollectiblePrefab: {fileID: 4498679382261551532, guid: 946fbb837855d4b499105c1d720446d7,
-    type: 3}
   MapSize: 40
   NumberOfSteps: 2000
   Corridorness: 0.7
