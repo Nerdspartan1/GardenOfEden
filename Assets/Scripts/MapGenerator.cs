@@ -18,9 +18,6 @@ public class MapGenerator : MonoBehaviour
 	public GameObject Player;
 	public GameObject Monster;
 
-	public GameObject WallPrefab;
-	public GameObject CollectiblePrefab;
-
 	public int MapSize;
 	public int NumberOfSteps;
 
