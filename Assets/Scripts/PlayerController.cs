@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
 	public bool Azerty = false;
 
-    FMOD.Studio.Bus EverythingbutMenuBus;
+
 
     [HideInInspector]
 	public Camera Camera;
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
 		_height = transform.position.y;
 
-        EverythingbutMenuBus = FMODUnity.RuntimeManager.GetBus("Bus:/Everything but Menu");
+        
 
 	}
 
@@ -52,25 +52,6 @@ public class PlayerController : MonoBehaviour
 		UpdateCameraRotation();
 		UpdateMovement();
 		UpdateEffects();
-
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			FMOD.Studio.PARAMETER_DESCRIPTION pd;
-			FMOD.Studio.PARAMETER_ID EnemyDistID;
-
-			FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("Enemy Dist", out pd);
-			EnemyDistID = pd.id;
-
-			FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
-
-			LevelManager.Instance.SoundscapeEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-			LevelManager.Instance.SoundscapeEvent.release();
-
-			GameManager.Instance.RestartGame();
-
-            EverythingbutMenuBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
-
-		}
 	}
 
 	private void UpdateCameraRotation()

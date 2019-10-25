@@ -13,17 +13,20 @@ public class LevelManager : MonoBehaviour
 	private Ending _ending;
 	[SerializeField]
 	private int _numberOfCollectiblesLeft;
-	
 
-    //Adding fmod item progression and soundscape
+	FMOD.Studio.Bus EverythingbutMenuBus;
 
-    public FMOD.Studio.EventInstance SoundscapeEvent;
+	//Adding fmod item progression and soundscape
+
+	public FMOD.Studio.EventInstance SoundscapeEvent;
 
     private void Awake()
 	{
 		Instance = this;
 		_propsManager = GetComponent<PropsManager>();
 		_ending = GetComponent<Ending>();
+
+		EverythingbutMenuBus = FMODUnity.RuntimeManager.GetBus("Bus:/Everything but Menu");
 	}
 
 	void Start()
@@ -34,14 +37,18 @@ public class LevelManager : MonoBehaviour
         SoundscapeEvent.start();
     }
 
-	//DEBUG
-	//private void Update()
-	//{
-	//	if (Input.GetKeyDown(KeyCode.P))
-	//	{
-	//		Collect();
-	//	}
-	//}
+	
+	private void Update()
+	{
+		//DEBUG
+		//if (Input.GetKeyDown(KeyCode.P))
+		//{
+		//	Collect();
+		//}
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+			LeaveGame();
+	}
 
 	public void Collect()
 	{
@@ -71,4 +78,21 @@ public class LevelManager : MonoBehaviour
 		writer.Close();
 	}
 
+	public void LeaveGame(bool audioFade = false)
+	{
+		FMOD.Studio.PARAMETER_DESCRIPTION pd;
+		FMOD.Studio.PARAMETER_ID EnemyDistID;
+
+		FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("Enemy Dist", out pd);
+		EnemyDistID = pd.id;
+
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
+
+		LevelManager.Instance.SoundscapeEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+		LevelManager.Instance.SoundscapeEvent.release();
+
+		GameManager.Instance.RestartGame();
+
+		if(!audioFade) EverythingbutMenuBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+	}
 }
