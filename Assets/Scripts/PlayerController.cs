@@ -17,33 +17,25 @@ public class PlayerController : MonoBehaviour
 
 	public bool Azerty = false;
 
-
+	private float _confusedCameraAngle;
+	private float _timeConfused = 0f;
 
     [HideInInspector]
 	public Camera Camera;
-	private Grain _grain;
+	
 	private ChromaticAberration _chromaticAberration;
 	private CharacterController _controller;
-	//VFX
-	private GlitchEffect _glitchEffect;
-	private DeadPixelGenerator _deadPixelGenerator;
-	private ApocalypseFilter _apocalypseFilter;
+
 
 	private float _height;
 
 	private void Awake()
 	{
 		Camera = GetComponentInChildren<Camera>();
-		_grain = Camera.GetComponent<PostProcessVolume>().sharedProfile.GetSetting<Grain>();
+		
 		_chromaticAberration = Camera.GetComponent<PostProcessVolume>().sharedProfile.GetSetting<ChromaticAberration>();
-		_glitchEffect = GetComponentInChildren<GlitchEffect>();
 		_controller = GetComponent<CharacterController>();
-		_deadPixelGenerator = GetComponentInChildren<DeadPixelGenerator>();
-		_apocalypseFilter = GetComponentInChildren<ApocalypseFilter>();
-
 		_height = transform.position.y;
-
-        
 
 	}
 
@@ -52,6 +44,10 @@ public class PlayerController : MonoBehaviour
 		UpdateCameraRotation();
 		UpdateMovement();
 		UpdateEffects();
+
+		//if (Input.GetKeyDown(KeyCode.I)) Confuse(4f);
+
+		if(_timeConfused > 0f) _timeConfused -= Time.deltaTime;
 	}
 
 	private void UpdateCameraRotation()
@@ -63,7 +59,7 @@ public class PlayerController : MonoBehaviour
 		rotationY = Mathf.Clamp(rotationY, -70f, +70f);
 
 		transform.localEulerAngles = new Vector3(0, rotationX, 0);
-		Camera.transform.localEulerAngles = new Vector3(-rotationY, 0, 0);
+		Camera.transform.localEulerAngles = new Vector3(-rotationY, 0, _timeConfused > 0f ? _confusedCameraAngle : 0f);
 	}
 
 	private void UpdateMovement()
@@ -80,19 +76,6 @@ public class PlayerController : MonoBehaviour
 
 	private void UpdateEffects()
 	{
-		float distanceToMonster = Monster.PlayerDistanceInSight;
-		float intensityFactor = Mathf.Min(1f, 10f / distanceToMonster); //max intensity at 10 meter
-
-		float minIntensity = 0.1f * Mathf.Max(0, Monster.Aggressivity - 3);
-		intensityFactor = Mathf.Max(minIntensity, intensityFactor);
-		_glitchEffect.intensity = intensityFactor;
-		_glitchEffect.flipIntensity = intensityFactor;
-		_glitchEffect.colorIntensity = intensityFactor > 0.2f ? intensityFactor : 0f; //add dead zone here bc even low factor changes color significantly
-		_grain.intensity.value = intensityFactor;
-		_deadPixelGenerator.Intensity = intensityFactor;
-
-		_apocalypseFilter.enabled = (Monster.Aggressivity >= 5) && intensityFactor > 0.5f;
-
 		float sqrDistanceToMonolith = (transform.position - Monolith.transform.position).sqrMagnitude;
 		float intensityFactor_monolith = Mathf.Min(1f, 3f*3f / sqrDistanceToMonolith); //max intensity at 3 meter
 		_chromaticAberration.intensity.value = intensityFactor_monolith;
@@ -105,6 +88,12 @@ public class PlayerController : MonoBehaviour
 			other.GetComponent<Collectible>().PickUp();
 			LevelManager.Instance.Collect();
 		}
+	}
+
+	public void Confuse(float duration)
+	{
+		_timeConfused = duration;
+		_confusedCameraAngle = Random.Range(0, 360f);
 	}
 
 	public void SetAzerty(bool azerty)

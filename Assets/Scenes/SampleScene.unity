@@ -20,8 +20,8 @@ RenderSettings:
   m_FogDensity: 0.1
   m_LinearFogStart: 0
   m_LinearFogEnd: 20
-  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientEquatorColor: {r: 0.32306868, g: 0.37828407, b: 0.41509432, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
@@ -1652,14 +1652,16 @@ MonoBehaviour:
   PropsManager: {fileID: 1340689695}
   GameOver: {fileID: 1340689698}
   SightDistance: 18
-  LoseSightDistance: 18
   CantSeeThrough:
     serializedVersion: 2
     m_Bits: 768
-  QuitChasingDelay: 5
   TeleportationPeriod: 20
-  AggressivitySpeedGain: 0.5
+  QuitChasingDelay: 5
+  LoseSightDistance: 18
+  ChaseTimeBeforeTeleport: 8
   CatchDistance: 3
+  ConfusionPeriod: 1
+  AggressivitySpeedGain: 0.5
   TeleportationPeriodGain: 2
   Aggressivity: 1
   CurrentDestination: {x: 0, y: 0, z: 0}

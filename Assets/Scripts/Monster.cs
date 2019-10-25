@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Monster : MonoBehaviour
 {
@@ -13,23 +14,38 @@ public class Monster : MonoBehaviour
 	}
 
 	public PlayerController Player;
+
+	//VFX
+	private GlitchEffect _glitchEffect;
+	private Grain _grain;
+	private DeadPixelGenerator _deadPixelGenerator;
+	private ApocalypseFilter _apocalypseFilter;
+
 	public MapGenerator MapGenerator;
 	public PropsManager PropsManager;
 	public GameOver GameOver;
 
+	[Header("Roaming Behaviour")]
 	public float SightDistance = 18f;
-	public float LoseSightDistance = 24f;
 	public LayerMask CantSeeThrough;
-	public float QuitChasingDelay = 5f;
 	public float TeleportationPeriod = 10f;
-	public float AggressivitySpeedGain = 0.5f;
+	
+	[Header("Chase Behaviour")]
+	public float QuitChasingDelay = 5f;
+	public float LoseSightDistance = 24f;
+	public float ChaseTimeBeforeTeleport = 10f;
 	public float CatchDistance = 3f;
+	public float ConfusionPeriod = 1f;
+
+	[Header("Aggressivity")]
+	public float AggressivitySpeedGain = 0.5f;
 	public float TeleportationPeriodGain = 2f;
 
 	private Vector3 _lastSeenPlayerPosition;
 	private bool _destinationInitialized = false;
 	private float _timeBeforeQuitChasing;
 	private float _timeBeforeTeleportation;
+	private float _timeBeforeConfuseChance;
 	private float _baseSpeed;
 	private bool _caughtPlayer = false;
 
@@ -51,7 +67,11 @@ public class Monster : MonoBehaviour
     {
 		_nav = GetComponent<NavMeshAgent>();
 		_nav.updateRotation = false;
-    }
+		_glitchEffect = Player.GetComponentInChildren<GlitchEffect>();
+		_deadPixelGenerator = Player.GetComponentInChildren<DeadPixelGenerator>();
+		_apocalypseFilter = Player.GetComponentInChildren<ApocalypseFilter>();
+		_grain = Player.GetComponentInChildren<PostProcessVolume>().sharedProfile.GetSetting<Grain>();
+	}
 
 	private void Start()
 	{
@@ -80,23 +100,45 @@ public class Monster : MonoBehaviour
 					if (PlayerDistanceInSight < LoseSightDistance)
 					{
 						_timeBeforeQuitChasing = QuitChasingDelay;
+						if (Aggressivity >= 4)
+						{
+							if (_timeBeforeTeleportation <= 0)//continuously chased the player for a period of time
+							{
+								Teleport();
+								_timeBeforeTeleportation = ChaseTimeBeforeTeleport;
+							}
+							_timeBeforeTeleportation -= Time.deltaTime;
+
+						}
+						if (_timeBeforeConfuseChance <= 0f)
+						{
+							if (Random.value < 0.015f*Aggressivity)
+							{
+								Player.Confuse((float)Aggressivity/3f);
+							}
+							_timeBeforeConfuseChance = ConfusionPeriod;
+						}
+						_timeBeforeConfuseChance -= Time.deltaTime;
 					}
 					else
 					{
-						if (_timeBeforeQuitChasing == QuitChasingDelay) //just lost sight
+						if (_timeBeforeQuitChasing == QuitChasingDelay)//just lost sight
+						{ 
 							_lastSeenPlayerPosition = Player.transform.position;
+						}
 						_timeBeforeQuitChasing -= Time.deltaTime;
+						
 					}
 
+					
 					if (_timeBeforeQuitChasing <= 0) //quit chasing
 					{
+						_timeBeforeTeleportation = TeleportationPeriod;
 						CurrentAI = AI.Roam;
-						CurrentDestination = _lastSeenPlayerPosition;
-						_destinationInitialized = true;
+						Teleport();
+						_destinationInitialized = false;
 
 						FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
-						//EntityEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-						//EntityEvent.release();
 
 					}
 
@@ -119,8 +161,10 @@ public class Monster : MonoBehaviour
 
 					if (PlayerDistanceInSight < SightDistance) //start chase
 					{
+						_timeBeforeTeleportation = ChaseTimeBeforeTeleport;
+						_timeBeforeConfuseChance = ConfusionPeriod;
 						_destinationInitialized = false;
-						_timeBeforeTeleportation = TeleportationPeriod;
+						//_timeBeforeTeleportation = TeleportationPeriod;
 						CurrentAI = AI.Chase;
 
 						EntityEvent.start();
@@ -135,13 +179,28 @@ public class Monster : MonoBehaviour
 				_caughtPlayer = true;
 				GameOver.enabled = true;
 
-                
-
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByID(EnemyDistID, 0f);
                 EntityEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                 EntityEvent.release();
             }
 		}
+
+		UpdateEffects();
+	}
+
+	public void UpdateEffects()
+	{
+		float intensityFactor = Mathf.Min(1f, 10f / PlayerDistanceInSight); //max intensity at 10 meter
+
+		float minIntensity = 0.1f * Mathf.Max(0, Aggressivity - 3);
+		intensityFactor = Mathf.Max(minIntensity, intensityFactor);
+		_glitchEffect.intensity = intensityFactor;
+		_glitchEffect.flipIntensity = intensityFactor;
+		_glitchEffect.colorIntensity = intensityFactor > 0.2f ? intensityFactor : 0f; //add dead zone here bc even low factor changes color significantly
+		_grain.intensity.value = intensityFactor;
+		_deadPixelGenerator.Intensity = intensityFactor;
+
+		_apocalypseFilter.enabled = (Aggressivity >= 5) && intensityFactor > 0.5f;
 	}
 
 	public void LevelUpAggressivity(int aggressivity)
