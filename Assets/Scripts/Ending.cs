@@ -73,7 +73,7 @@ public class Ending : MonoBehaviour
 			{
 				col.transform.RotateAround(Monolith.transform.position, Vector3.up,360f* Time.deltaTime*spinSpeed);
 			}
-			yield return null;
+			yield return new WaitForEndOfFrame();
 			IncantationTime -= Time.deltaTime;
 		}
 	}
@@ -92,7 +92,7 @@ public class Ending : MonoBehaviour
 			float nextDestructionPeriod = 1f / WallDestructionRate;
 
 			yield return new WaitForSeconds(nextDestructionPeriod);
-			TimeBeforeGroundDisappear -= nextDestructionPeriod;
+			TimeBeforeGroundDisappear -= Time.deltaTime;
 
 		}
 
@@ -110,7 +110,7 @@ public class Ending : MonoBehaviour
 			Black.color = new Color(0, 0, 0, 1 - timeToFadeOut / 5f);
 		
 			timeToFadeOut -= Time.deltaTime;
-			yield return null;
+			yield return new WaitForEndOfFrame();
 		}
 
 		StartCoroutine(ShowEndText());

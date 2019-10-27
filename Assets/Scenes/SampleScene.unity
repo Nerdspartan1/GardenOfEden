@@ -3458,7 +3458,7 @@ MonoBehaviour:
   IncantationTime: 20
   ActivationDistance: 3
   WallDestructionRate: 200
-  TimeBeforeGroundDisappear: 3
+  TimeBeforeGroundDisappear: 6
 --- !u!114 &1340689698
 MonoBehaviour:
   m_ObjectHideFlags: 0
