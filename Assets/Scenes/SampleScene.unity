@@ -3381,7 +3381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 1324605963}
-  _numberOfCollectiblesLeft: 0
+  StartFogColor: {r: 1, g: 1, b: 1, a: 1}
+  EndFogColor: {r: 0.5058824, g: 0.003921569, b: 0.007843138, a: 0}
 --- !u!114 &1340689695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4498,7 +4499,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 646916607}
   m_Direction: 0
   m_MinValue: 40
-  m_MaxValue: 200
+  m_MaxValue: 300
   m_WholeNumbers: 0
   m_Value: 40
   m_OnValueChanged:

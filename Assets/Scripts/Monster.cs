@@ -201,7 +201,7 @@ public class Monster : MonoBehaviour
 		_grain.intensity.value = intensityFactor;
 		_deadPixelGenerator.Intensity = intensityFactor;
 
-		_apocalypseFilter.enabled = (Aggressivity >= 5) && intensityFactor > 0.5f;
+		_apocalypseFilter.enabled = (Aggressivity >= 5) && intensityFactor == 1f;
 	}
 
 	public void LevelUpAggressivity(int aggressivity)
@@ -212,7 +212,9 @@ public class Monster : MonoBehaviour
 		{
 			Teleport();
 		}
-		RenderSettings.fogColor = 1f * Color.red + (1f - (float)Aggressivity / 6f) * (Color.cyan);
+		//RenderSettings.fogColor = 1f * Color.red + (1f - (float)Aggressivity / 6f) * (Color.cyan);
+		float r = (float)Aggressivity / 6f;
+		RenderSettings.fogColor = (1 - r) * LevelManager.Instance.StartFogColor + r * LevelManager.Instance.EndFogColor;
 
 		Player.Camera.backgroundColor = RenderSettings.fogColor;
 	}

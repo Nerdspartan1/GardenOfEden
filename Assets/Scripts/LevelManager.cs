@@ -11,8 +11,11 @@ public class LevelManager : MonoBehaviour
 	public Monster Monster;
 	private PropsManager _propsManager;
 	private Ending _ending;
-	[SerializeField]
+
 	private int _numberOfCollectiblesLeft;
+
+	public Color StartFogColor;
+	public Color EndFogColor;
 
 	FMOD.Studio.Bus EverythingbutMenuBus;
 
