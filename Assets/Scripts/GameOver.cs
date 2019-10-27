@@ -10,6 +10,7 @@ public class GameOver : MonoBehaviour
 	public Monster Monster;
 	public Image Black;
 	public Image CreepyImage;
+	public Image BSOD;
 
 	public float BlinkRate = 20f;
 	public float AnimationDuration = 1f;
@@ -18,13 +19,30 @@ public class GameOver : MonoBehaviour
 
 	private void OnEnable()
 	{
+		Player.enabled = false;
+		Monster.GetComponent<NavMeshAgent>().enabled = false;
+
+		if (Monster.Aggressivity < 6) StartCoroutine(GameOverAnimation());
+		else StartCoroutine(BSODAnimation());
+	}
+
+	public IEnumerator BSODAnimation()
+	{
+		LevelManager.Instance.EverythingbutMenuBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+		Player.GetComponentInChildren<GlitchEffect>().enabled = false;
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Enemy Dist", 0f);
+		BSOD.enabled = true;
+
+		yield return new WaitForSeconds(4f);
+
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Enemy Dist", 100f);
+		Player.GetComponentInChildren<GlitchEffect>().enabled = true;
 		StartCoroutine(GameOverAnimation());
 	}
 
 	public IEnumerator GameOverAnimation()
 	{
-		Player.enabled = false;
-		Monster.GetComponent<NavMeshAgent>().enabled = false;
+
 		CreepyImage.transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height));
 
         FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/Ending Jumpscare Lose");

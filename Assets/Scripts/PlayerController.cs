@@ -44,9 +44,10 @@ public class PlayerController : MonoBehaviour
 		UpdateMovement();
 		UpdateEffects();
 
-		//if (Input.GetKeyDown(KeyCode.I)) Confuse(4f);
+		if (Input.GetKeyDown(KeyCode.Escape))
+			LevelManager.Instance.LeaveGame();
 
-		if(_timeConfused > 0f) _timeConfused -= Time.deltaTime;
+		if (_timeConfused > 0f) _timeConfused -= Time.deltaTime;
 	}
 
 	private void UpdateCameraRotation()

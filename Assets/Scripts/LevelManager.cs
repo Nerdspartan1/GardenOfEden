@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
 	public Color StartFogColor;
 	public Color EndFogColor;
 
-	FMOD.Studio.Bus EverythingbutMenuBus;
+	public FMOD.Studio.Bus EverythingbutMenuBus;
 
 	//Adding fmod item progression and soundscape
 
@@ -49,8 +49,6 @@ public class LevelManager : MonoBehaviour
 		//	Collect();
 		//}
 
-		if (Input.GetKeyDown(KeyCode.Escape))
-			LeaveGame();
 	}
 
 	public void Collect()
