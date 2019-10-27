@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 	public GameObject Menu;
 
 	public Toggle AzertyToggle;
+	public Slider SensitivitySlider;
 
     
     FMOD.Studio.EventInstance MenuMusicEvent;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
         MenuMusicEvent.start();
 
 		AzertyToggle.isOn = PlayerPrefs.GetInt("azerty",0) == 1;
+		SensitivitySlider.value = PlayerPrefs.GetFloat("sensitivity", 100f);
     }
 
 	public void StartGame()

@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
 	public Monster Monster;
 	public GameObject Monolith;
 
-	public float cameraSensitivityX = 100f;
-	public float cameraSensitivityY = 100f;
+	public float cameraSensitivity = 100f;
 
     public float MoveSpeed = 6f;
 
@@ -53,9 +52,9 @@ public class PlayerController : MonoBehaviour
 	private void UpdateCameraRotation()
 	{
 		Cursor.lockState = CursorLockMode.Locked;
-		float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * cameraSensitivityX * Time.deltaTime;
+		float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
 
-		rotationY += Input.GetAxis("Mouse Y") * cameraSensitivityY * Time.deltaTime;
+		rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
 		rotationY = Mathf.Clamp(rotationY, -70f, +70f);
 
 		transform.localEulerAngles = new Vector3(0, rotationX, 0);
@@ -100,6 +99,12 @@ public class PlayerController : MonoBehaviour
 	{
 		Azerty = azerty;
 		PlayerPrefs.SetInt("azerty", azerty ? 1 : 0);
+	}
+
+	public void SetSensitivity(float sensitivity)
+	{
+		cameraSensitivity = sensitivity;
+		PlayerPrefs.SetFloat("sensitivity", sensitivity);
 	}
 
 }
