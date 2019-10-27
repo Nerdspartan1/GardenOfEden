@@ -227,6 +227,11 @@ PrefabInstance:
       propertyPath: SineAmplitude
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2112863275702499283, guid: 5ce04bef9f06f9b4c8e81e647e86c74f,
+        type: 3}
+      propertyPath: InitialPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ce04bef9f06f9b4c8e81e647e86c74f, type: 3}
 --- !u!4 &38459466 stripped
@@ -504,6 +509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SineAmplitude
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864451600005130634, guid: 5968445fcdcca064780ff939a19d770c,
+        type: 3}
+      propertyPath: InitialPosition.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5968445fcdcca064780ff939a19d770c, type: 3}
@@ -3805,6 +3815,11 @@ PrefabInstance:
       propertyPath: SineAmplitude
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5101268778087555825, guid: e7ff8f532a2f17541a0ece06a208f8b5,
+        type: 3}
+      propertyPath: InitialPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7ff8f532a2f17541a0ece06a208f8b5, type: 3}
 --- !u!1 &1554740540
@@ -4587,6 +4602,11 @@ PrefabInstance:
       propertyPath: SineAmplitude
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1745307462730399622, guid: 3cd5f039bad5e1b409352cc7a59a718e,
+        type: 3}
+      propertyPath: InitialPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cd5f039bad5e1b409352cc7a59a718e, type: 3}
 --- !u!1001 &2008684429
@@ -4665,6 +4685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SineAmplitude
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5210754394990632325, guid: 08d3f01d3f3bc9d4db5d7e38cbd58307,
+        type: 3}
+      propertyPath: InitialPosition.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08d3f01d3f3bc9d4db5d7e38cbd58307, type: 3}
@@ -4919,6 +4944,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SineAmplitude
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 788340100178891114, guid: 90920da45ef61be4c92c974c25647369,
+        type: 3}
+      propertyPath: InitialPosition.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90920da45ef61be4c92c974c25647369, type: 3}

@@ -14,17 +14,21 @@ public class Collectible : MonoBehaviour
 	public float SpinFrequency = 0.5f;
 	private float _t = 0f;
 
+	private Vector3 _initialPosition;
+
 	public float VibrationIntensity = 0.1f;
 
 	public GameObject EffectOnPickUp;
 
-    void Update()
+	private void Start()
+	{
+		_initialPosition = transform.position + LevitationHeight*Vector3.up;
+	}
+
+	void Update()
     {
 		//levitate
-		transform.position = new Vector3(
-			transform.position.x,
-			LevitationHeight + SineAmplitude * Mathf.Sin(6.28f * _t * SineFrequency),
-			transform.position.z);
+		transform.position = _initialPosition + SineAmplitude * Mathf.Sin(6.28f * _t * SineFrequency) * Vector3.up;
 
 		transform.rotation = Quaternion.Euler(0, 360f*_t * SpinFrequency, 0f);
 		_t += Time.deltaTime;
