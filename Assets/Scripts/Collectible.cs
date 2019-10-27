@@ -5,6 +5,8 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
 	public GameObject Player;
+	public CollectiblePopup CollectiblePopup;
+	public RenderTexture IconTexture;
 
 	public float LevitationHeight = 1.8f;
 	public float SineAmplitude = 0.2f;
@@ -28,16 +30,20 @@ public class Collectible : MonoBehaviour
 		_t += Time.deltaTime;
 
 		//vibrate when player approaches
-		float sqrDistance = (transform.position - Player.transform.position).sqrMagnitude;
-		float vibration = VibrationIntensity / sqrDistance;
+		if (Player)
+		{
+			float sqrDistance = (transform.position - Player.transform.position).sqrMagnitude;
+			float vibration = VibrationIntensity / sqrDistance;
 
-		transform.position += Random.onUnitSphere * vibration;
+			transform.position += Random.onUnitSphere * vibration;
+		}
 
     }
 
 	public void PickUp()
 	{
 		var effect = Instantiate(EffectOnPickUp, transform.position, Quaternion.identity);
+		CollectiblePopup.Add(IconTexture);
 		Destroy(effect, 3f);
 		Destroy(gameObject);
 	}

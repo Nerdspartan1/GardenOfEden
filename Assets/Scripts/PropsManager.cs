@@ -6,6 +6,7 @@ public class PropsManager : MonoBehaviour
 {
 	public GameObject[] Props;
 	public GameObject[] Collectibles;
+	public CollectiblePopup CollectiblePopup;
 
 	public GameObject GetRandomProp()
 	{

@@ -122,8 +122,9 @@ public class MapGenerator : MonoBehaviour
 				pos = GetRandomCellPositionInLevel();
 			} while (occupiedCells.Exists(v => v == pos));
 			occupiedCells.Add(pos);
-			var collectible = Instantiate(_propsManager.Collectibles[i], CellToWorld(pos), Quaternion.identity, transform);
-			collectible.GetComponent<Collectible>().Player = Player;
+			var collectible = Instantiate(_propsManager.Collectibles[i], CellToWorld(pos), Quaternion.identity, transform).GetComponent<Collectible>();
+			collectible.Player = Player;
+			collectible.CollectiblePopup = _propsManager.CollectiblePopup;
 		}
 
 		//Place the props

@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  CollectiblePopup: {fileID: 0}
+  IconTexture: {fileID: 8400000, guid: ef38df853399b6f4fa40d61a5c7cc978, type: 2}
   LevitationHeight: 1.5
   SineAmplitude: 0.1
   SineFrequency: 0.4

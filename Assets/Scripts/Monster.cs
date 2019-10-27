@@ -105,6 +105,7 @@ public class Monster : MonoBehaviour
 							if (_timeBeforeTeleportation <= 0)//continuously chased the player for a period of time
 							{
 								Teleport();
+								SwitchAppearance();
 								_timeBeforeTeleportation = ChaseTimeBeforeTeleport;
 							}
 							_timeBeforeTeleportation -= Time.deltaTime;
