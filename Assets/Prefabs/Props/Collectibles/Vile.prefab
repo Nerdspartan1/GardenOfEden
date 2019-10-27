@@ -125,7 +125,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   CollectiblePopup: {fileID: 0}
   IconTexture: {fileID: 8400000, guid: 30fb4731e04f1de4b919f934f812ef14, type: 2}
-  InitialPosition: {x: 0, y: 1.8, z: 0}
+  LevitationHeight: 1.5
   SineAmplitude: 0.1
   SineFrequency: 0.4
   SpinFrequency: 0.1
