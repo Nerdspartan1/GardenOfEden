@@ -30,6 +30,7 @@ public class GameOver : MonoBehaviour
 	{
 		LevelManager.Instance.EverythingbutMenuBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
 		Player.GetComponentInChildren<GlitchEffect>().enabled = false;
+		Player.GetComponent<FMODFootsteps>().enabled = false;
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Enemy Dist", 0f);
 		BSOD.enabled = true;
 
